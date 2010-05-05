@@ -25,11 +25,13 @@ extern NSUInteger SRCocoaToCarbonFlags(NSUInteger cocoaFlags);
 {
   NSInteger keyCode;
   NSUInteger modifierFlags;
+  NSString *characterIgnoringModifiers;
 }
 
 @property (nonatomic, assign) NSInteger keyCode;
 @property (nonatomic, assign) NSUInteger modifierFlags;
 @property (nonatomic, assign) NSUInteger carbonModifierFlags;
+@property (nonatomic, retain) NSString *characterIgnoringModifiers;
 
 // Returns an autoreleased instance of HotkeyBox using designated initializer.
 + (id)hotkeyBoxWithKeyCode:(NSInteger)aKeyCode modifierFlags:(NSUInteger)someModifierFlags;

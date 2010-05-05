@@ -45,6 +45,7 @@ NSUInteger SRCocoaToCarbonFlags(NSUInteger cocoaFlags)
 @synthesize keyCode;
 @synthesize modifierFlags;
 @dynamic carbonModifierFlags;
+@synthesize characterIgnoringModifiers;
 
 - (NSUInteger)carbonModifierFlags
 {
