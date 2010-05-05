@@ -48,7 +48,7 @@
 - (BOOL)performKeyEquivalent:(NSEvent *)event
 {
   NSString *keyEquivalent = [event charactersIgnoringModifiers];
-  NSUInteger modifierFlags = [event modifierFlags];
+  NSUInteger modifierFlags = ([event modifierFlags] & NSDeviceIndependentModifierFlagsMask);
   
   if ([keyEquivalent length] == 0)
   {
@@ -78,6 +78,10 @@
   if ([[event charactersIgnoringModifiers] length] > 0)
   {
     [self performKeyEquivalent:event];
+  }
+  else
+  {
+    [self setStringValue:[NWHotkeyStringTransformer stringWithModifierFlags:[event modifierFlags]]];
   }
 }
 
