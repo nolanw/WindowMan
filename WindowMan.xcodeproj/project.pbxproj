@@ -26,6 +26,10 @@
 		F28E513A1191299200880FFF /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28E51391191299200880FFF /* Carbon.framework */; };
 		F28E514111912A6600880FFF /* NWLoginItems.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E513F11912A6600880FFF /* NWLoginItems.h */; };
 		F28E514211912A6600880FFF /* NWLoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E514011912A6600880FFF /* NWLoginItems.m */; };
+		F28E515311915E8B00880FFF /* WindowManHotkeyTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E515111915E8B00880FFF /* WindowManHotkeyTextView.h */; };
+		F28E515411915E8B00880FFF /* WindowManHotkeyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E515211915E8B00880FFF /* WindowManHotkeyTextView.m */; };
+		F28E51651191659300880FFF /* WindowManHotkeyCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E51631191659300880FFF /* WindowManHotkeyCell.h */; };
+		F28E51661191659300880FFF /* WindowManHotkeyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E51641191659300880FFF /* WindowManHotkeyCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +51,10 @@
 		F28E51391191299200880FFF /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		F28E513F11912A6600880FFF /* NWLoginItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWLoginItems.h; sourceTree = "<group>"; };
 		F28E514011912A6600880FFF /* NWLoginItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWLoginItems.m; sourceTree = "<group>"; };
+		F28E515111915E8B00880FFF /* WindowManHotkeyTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManHotkeyTextView.h; sourceTree = "<group>"; };
+		F28E515211915E8B00880FFF /* WindowManHotkeyTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManHotkeyTextView.m; sourceTree = "<group>"; };
+		F28E51631191659300880FFF /* WindowManHotkeyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManHotkeyCell.h; sourceTree = "<group>"; };
+		F28E51641191659300880FFF /* WindowManHotkeyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManHotkeyCell.m; sourceTree = "<group>"; };
 		F506C035013D953901CA16C8 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
 		F506C03C013D9D7901CA16C8 /* WindowManPref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManPref.h; sourceTree = "<group>"; };
 		F506C03D013D9D7901CA16C8 /* WindowManPref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManPref.m; sourceTree = "<group>"; };
@@ -106,6 +114,10 @@
 				F28E514011912A6600880FFF /* NWLoginItems.m */,
 				F506C03C013D9D7901CA16C8 /* WindowManPref.h */,
 				F506C03D013D9D7901CA16C8 /* WindowManPref.m */,
+				F28E515111915E8B00880FFF /* WindowManHotkeyTextView.h */,
+				F28E515211915E8B00880FFF /* WindowManHotkeyTextView.m */,
+				F28E51631191659300880FFF /* WindowManHotkeyCell.h */,
+				F28E51641191659300880FFF /* WindowManHotkeyCell.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -176,6 +188,8 @@
 				F28E512B1191282E00880FFF /* NWHotkeyBox.h in Headers */,
 				F28E512D1191282E00880FFF /* NWHotkeyStringTransformer.h in Headers */,
 				F28E514111912A6600880FFF /* NWLoginItems.h in Headers */,
+				F28E515311915E8B00880FFF /* WindowManHotkeyTextView.h in Headers */,
+				F28E51651191659300880FFF /* WindowManHotkeyCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +267,8 @@
 				F28E512C1191282E00880FFF /* NWHotkeyBox.m in Sources */,
 				F28E512E1191282E00880FFF /* NWHotkeyStringTransformer.m in Sources */,
 				F28E514211912A6600880FFF /* NWLoginItems.m in Sources */,
+				F28E515411915E8B00880FFF /* WindowManHotkeyTextView.m in Sources */,
+				F28E51661191659300880FFF /* WindowManHotkeyCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
