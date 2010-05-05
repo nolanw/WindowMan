@@ -43,11 +43,6 @@
   return NO;
 }
 
-- (void)insertText:(id)string
-{
-  NSLog(@"%s hello: %@", _cmd, string);
-}
-
 // NSView
 
 - (BOOL)performKeyEquivalent:(NSEvent *)event
