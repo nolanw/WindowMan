@@ -1,0 +1,16 @@
+# OS X crap
+.DS_Store
+profile
+
+# Xcode crap
+*.swp
+*~.nib
+build/*
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.mode1v3
+*.mode2v3
+
+# Textmate crap
+*.tm_build_errors
