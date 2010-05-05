@@ -11,7 +11,7 @@
 
 @interface WindowManPref : NSPreferencePane 
 {
-
+  NSMutableArray *hotkeys;
 }
 
 - (void) mainViewDidLoad;
