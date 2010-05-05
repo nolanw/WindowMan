@@ -17,4 +17,6 @@
   WindowManHotkeyTextView *fieldEditor;
 }
 
+@property (readonly) WindowManHotkeyTextView *fieldEditor;
+
 @end

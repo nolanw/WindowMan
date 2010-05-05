@@ -12,6 +12,8 @@
 
 @implementation WindowManHotkeyCell
 
+@dynamic fieldEditor;
+
 - (void)dealloc
 {
   [fieldEditor release];
@@ -19,17 +21,22 @@
   [super dealloc];
 }
 
-// NSCell
-
-- (NSTextView *)fieldEditorForView:(NSView *)aControlView
+- (WindowManHotkeyTextView *)fieldEditor
 {
   if (fieldEditor == nil)
   {
     fieldEditor = [[WindowManHotkeyTextView alloc] init];
     [fieldEditor setFieldEditor:YES];
   }
-  
+
   return fieldEditor;
+}
+
+// NSCell
+
+- (NSTextView *)fieldEditorForView:(NSView *)aControlView
+{
+  return self.fieldEditor;
 }
 
 @end
