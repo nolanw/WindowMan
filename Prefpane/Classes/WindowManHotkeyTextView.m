@@ -82,19 +82,17 @@ static inline NSUInteger ScrubModifierFlags(NSUInteger modifierFlags)
   NSString *keyEquivalent = [event charactersIgnoringModifiers];
   NSUInteger modifierFlags = ScrubModifierFlags([event modifierFlags]);
   
-  if ([keyEquivalent length] == 0)
-  {
-    [self setStringValue:[NWHotkeyStringTransformer stringWithModifierFlags:modifierFlags]];
-    return YES;
-  }
-  
   static NWHotkeyStringTransformer *transformer = nil;
   if (transformer == nil)
   {
     transformer = [[NWHotkeyStringTransformer alloc] init];
   }
   self.hotkey = [NWHotkeyBox hotkeyBoxWithKeyCode:[event keyCode] modifierFlags:modifierFlags];
-  self.hotkey.characterIgnoringModifiers = [keyEquivalent substringToIndex:1];
+  // Grab the unaccented character if one was given.
+  if ((modifierFlags & NSAlternateKeyMask) && ([event keyCode] < 0x5C))
+  {
+    self.hotkey.characterIgnoringModifiers = [keyEquivalent substringToIndex:1];
+  }
   [self setStringValue:[transformer transformedValue:self.hotkey]];
   
   [self endEditing];
