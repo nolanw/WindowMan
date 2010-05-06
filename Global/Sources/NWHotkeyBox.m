@@ -85,11 +85,17 @@ NSUInteger SRCocoaToCarbonFlags(NSUInteger cocoaFlags)
 
 + (id)hotkeyBoxWithPreferencesRepresentation:(NSDictionary *)preferencesRepresentation
 {
-  NWHotkeyBox *hotkeyBox = [[self alloc] init];
+  NWHotkeyBox *hotkeyBox = [[[self alloc] init] autorelease];
+  if (preferencesRepresentation == nil)
+  {
+    hotkeyBox.keyCode = NWHotkeyBoxEmpty;
+    return hotkeyBox;
+  }
+  
   hotkeyBox.keyCode = [[preferencesRepresentation valueForKey:NWHotkeyBoxPreferencesKeyCodeKey] integerValue];
   hotkeyBox.modifierFlags = [[preferencesRepresentation valueForKey:NWHotkeyBoxPreferencesModifierFlagsKey] integerValue];
   hotkeyBox.characterIgnoringModifiers = [[preferencesRepresentation valueForKey:NWHotkeyBoxPreferencesCharacterIgnoringModifiersKey] stringValue];
-  return [hotkeyBox autorelease];
+  return hotkeyBox;
 }
 
 static id NilToNull(id couldBeNil)

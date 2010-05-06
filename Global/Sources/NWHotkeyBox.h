@@ -43,6 +43,7 @@ extern NSUInteger SRCocoaToCarbonFlags(NSUInteger cocoaFlags);
 - (id)initWithKeyCode:(NSInteger)aKeyCode carbonModifierFlags:(NSUInteger)someCarbonModifierFlags;
 
 // Creates an autoreleased instance of HotkeyBox from |preferencesRepresentation|.
+// If |preferencesRepresentation| is nil, returns an empty HotkeyBox.
 + (id)hotkeyBoxWithPreferencesRepresentation:(NSDictionary *)preferencesRepresentation;
 
 // Provides a representation suitable for storing in preferences.
