@@ -120,4 +120,11 @@ static inline NSUInteger ScrubModifierFlags(NSUInteger modifierFlags)
   }
 }
 
+// Show currently-held-down modifier glyphs.
+- (void)flagsChanged:(NSEvent *)event
+{
+  NSUInteger modifierFlags = ScrubModifierFlags([event modifierFlags]);
+  [self setStringValue:[NWHotkeyStringTransformer stringWithModifierFlags:modifierFlags]];
+}
+
 @end
