@@ -12,8 +12,11 @@
 @interface WindowManPref : NSPreferencePane 
 {
   NSMutableArray *hotkeys;
+  NSTableView *hotkeyTable;
 }
 
-- (void) mainViewDidLoad;
+@property (nonatomic, retain) IBOutlet NSTableView *hotkeyTable;
+
+- (void)mainViewDidLoad;
 
 @end

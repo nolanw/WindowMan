@@ -30,6 +30,7 @@
 		F28E515411915E8B00880FFF /* WindowManHotkeyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E515211915E8B00880FFF /* WindowManHotkeyTextView.m */; };
 		F28E51651191659300880FFF /* WindowManHotkeyCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E51631191659300880FFF /* WindowManHotkeyCell.h */; };
 		F28E51661191659300880FFF /* WindowManHotkeyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E51641191659300880FFF /* WindowManHotkeyCell.m */; };
+		F28E52D01193615800880FFF /* WindowManPreferences.strings in Resources */ = {isa = PBXBuildFile; fileRef = F28E52CF1193615800880FFF /* WindowManPreferences.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		F28E515211915E8B00880FFF /* WindowManHotkeyTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManHotkeyTextView.m; sourceTree = "<group>"; };
 		F28E51631191659300880FFF /* WindowManHotkeyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManHotkeyCell.h; sourceTree = "<group>"; };
 		F28E51641191659300880FFF /* WindowManHotkeyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManHotkeyCell.m; sourceTree = "<group>"; };
+		F28E52C9119360B800880FFF /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/WindowManPreferences.strings; sourceTree = "<group>"; };
 		F506C035013D953901CA16C8 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
 		F506C03C013D9D7901CA16C8 /* WindowManPref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManPref.h; sourceTree = "<group>"; };
 		F506C03D013D9D7901CA16C8 /* WindowManPref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManPref.m; sourceTree = "<group>"; };
@@ -79,8 +81,8 @@
 		089C166AFE841209C02AAC07 /* WindowMan */ = {
 			isa = PBXGroup;
 			children = (
+				F28E52D11193617C00880FFF /* Global */,
 				F28E51071191205200880FFF /* Prefpane */,
-				F28E50F511911F7A00880FFF /* Global Sources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
 			);
@@ -149,7 +151,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F28E50F511911F7A00880FFF /* Global Sources */ = {
+		F28E50F511911F7A00880FFF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				32DBCFA20370C41700C91783 /* WindowMan_Prefix.pch */,
@@ -162,7 +164,7 @@
 				F28E51291191282E00880FFF /* NWHotkeyStringTransformer.h */,
 				F28E512A1191282E00880FFF /* NWHotkeyStringTransformer.m */,
 			);
-			path = "Global Sources";
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		F28E51071191205200880FFF /* Prefpane */ = {
@@ -172,6 +174,23 @@
 				089C167CFE841241C02AAC07 /* Resources */,
 			);
 			path = Prefpane;
+			sourceTree = "<group>";
+		};
+		F28E52D11193617C00880FFF /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				F28E52D21193619000880FFF /* Resources */,
+				F28E50F511911F7A00880FFF /* Sources */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		F28E52D21193619000880FFF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F28E52CF1193615800880FFF /* WindowManPreferences.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +260,7 @@
 				8D202CED0486D31800D8A456 /* InfoPlist.strings in Resources */,
 				8D202CEE0486D31800D8A456 /* WindowManPref.tiff in Resources */,
 				8D202CEF0486D31800D8A456 /* WindowManPref.xib in Resources */,
+				F28E52D01193615800880FFF /* WindowManPreferences.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +301,14 @@
 				089C167EFE841241C02AAC07 /* English */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F28E52CF1193615800880FFF /* WindowManPreferences.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F28E52C9119360B800880FFF /* English */,
+			);
+			name = WindowManPreferences.strings;
 			sourceTree = "<group>";
 		};
 		F506C042013D9D8C01CA16C8 /* WindowManPref.xib */ = {
@@ -330,7 +358,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = supported;
-				GCC_PREFIX_HEADER = "Global Sources/WindowMan_Prefix.pch";
+				GCC_PREFIX_HEADER = Global/Sources/WindowMan_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -347,7 +375,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = supported;
-				GCC_PREFIX_HEADER = "Global Sources/WindowMan_Prefix.pch";
+				GCC_PREFIX_HEADER = Global/Sources/WindowMan_Prefix.pch;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;

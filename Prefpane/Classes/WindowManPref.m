@@ -7,16 +7,23 @@
 //
 
 #import "WindowManPref.h"
+#import "WindowManHotkeyTextView.h"
 
 
 @implementation WindowManPref
+
+@synthesize hotkeyTable;
 
 - (id)initWithBundle:(NSBundle *)bundle
 {
   self = [super initWithBundle:bundle];
   if (self != nil)
   {
-    hotkeys = [[NSMutableArray alloc] initWithObjects:@"", @"", @"", nil];
+    hotkeys = [[NSMutableArray alloc] init];
+    for (NSUInteger i = 0; i < [WindowManHotkeyPreferences() count]; i += 1)
+    {
+      [hotkeys addObject:[NSNull null]];
+    }
   }
   
   return self;
@@ -24,37 +31,49 @@
 
 - (void)dealloc
 {
+  [hotkeyTable release];
   [hotkeys release];
   
   [super dealloc];
 }
 
-- (void) mainViewDidLoad
+- (void)mainViewDidLoad
 {
+  
 }
 
 // NSTableViewDataSource
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
-  return 3;
+  return [WindowManHotkeyPreferences() count];
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)rowIndex
 {
   if ([[column identifier] isEqual:@"name"])
   {
-    return [[NSArray arrayWithObjects:@"One", @"Two", @"Three", nil] objectAtIndex:rowIndex];
+    return [WindowManCommonPreferences localizedDescriptionWithPreference:[WindowManHotkeyPreferences() objectAtIndex:rowIndex]];
   }
   else
   {
-    return [hotkeys objectAtIndex:rowIndex];
+    static NWHotkeyStringTransformer *transformer = nil;
+    if (transformer == nil)
+    {
+      transformer = [[NWHotkeyStringTransformer alloc] init];
+    }
+    id hotkey = [hotkeys objectAtIndex:rowIndex];
+    if ([hotkey isEqual:[NSNull null]])
+    {
+      return @"(none)";
+    }
+    return [transformer transformedValue:hotkey];
   }
 }
 
-- (void)tableView:(NSTableView *)tableView setObjectValue:(id)value forTableColumn:(NSTableColumn *)column row:(NSInteger)rowIndex
+- (void)controlTextDidEndEditing:(NSNotification *)note
 {
-  [hotkeys replaceObjectAtIndex:rowIndex withObject:value];
+  [hotkeys replaceObjectAtIndex:[hotkeyTable selectedRow] withObject:[(WindowManHotkeyTextView *)[[note userInfo] valueForKey:@"NSFieldEditor"] hotkey]];
 }
 
 @end

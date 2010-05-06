@@ -12,31 +12,17 @@
 
 @implementation WindowManHotkeyCell
 
-@dynamic fieldEditor;
-
-- (void)dealloc
-{
-  [fieldEditor release];
-  
-  [super dealloc];
-}
-
-- (WindowManHotkeyTextView *)fieldEditor
-{
-  if (fieldEditor == nil)
-  {
-    fieldEditor = [[WindowManHotkeyTextView alloc] init];
-    [fieldEditor setFieldEditor:YES];
-  }
-
-  return fieldEditor;
-}
-
 // NSCell
 
 - (NSTextView *)fieldEditorForView:(NSView *)aControlView
 {
-  return self.fieldEditor;
+  static WindowManHotkeyTextView *fieldEditor = nil;
+  if (fieldEditor == nil)
+  {
+    fieldEditor = [[WindowManHotkeyTextView alloc] initWithFrame:NSZeroRect];
+  }
+
+  return fieldEditor;
 }
 
 @end

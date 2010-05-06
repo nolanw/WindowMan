@@ -8,15 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class WindowManHotkeyTextView;
-
 
 // All this subclass does is provide a custom field editor for hotkeys.
 @interface WindowManHotkeyCell : NSTextFieldCell
 {
-  WindowManHotkeyTextView *fieldEditor;
 }
-
-@property (readonly) WindowManHotkeyTextView *fieldEditor;
 
 @end

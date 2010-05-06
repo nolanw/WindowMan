@@ -8,10 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class NWHotkeyBox;
 
 @interface WindowManHotkeyTextView : NSTextView
 {
-  
+  NWHotkeyBox *hotkey;
 }
+
+@property (nonatomic, readonly, retain) NWHotkeyBox *hotkey;
 
 @end

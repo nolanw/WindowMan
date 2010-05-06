@@ -1,0 +1,16 @@
+/* 
+   WindowManPreferences.strings
+   WindowMan
+
+   Created by Nolan Waite on 10-05-06.
+   Copyright 2010 Nolan Waite. All rights reserved.
+ */
+
+"WindowManHotkeyPreferenceLeftHalf" = "Occupy left half"
+"WindowManHotkeyPreferenceRightHalf" = "Occupy right half"
+"WindowManHotkeyPreferenceTopLeftQuarter" = "Occupy top left quarter"
+"WindowManHotkeyPreferenceTopRightQuarter" = "Occupy top right quarter"
+"WindowManHotkeyPreferenceBottomRightQuarter" = "Occupy bottom right quarter"
+"WindowManHotkeyPreferenceBottomLeftQuarter" = "Occupy bottom left quarter"
+"WindowManHotkeyPreferenceCenter" = "Occupy center"
+"WindowManHotkeyPreferenceMaximize" = "Occupy entire screen"
