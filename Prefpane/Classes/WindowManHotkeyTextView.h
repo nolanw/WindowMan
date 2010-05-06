@@ -15,6 +15,7 @@
   NWHotkeyBox *hotkey;
 }
 
+// The boxed hotkey whose string value is currently set.
 @property (nonatomic, readonly, retain) NWHotkeyBox *hotkey;
 
 @end
