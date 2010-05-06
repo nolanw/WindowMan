@@ -100,8 +100,9 @@ static NSNumber * BoxInt(NSInteger anInteger)
 
 + (NSString *)stringWithModifierFlags:(NSUInteger)modifierFlags
 {
-  return [NSString stringWithFormat:@"%@%@%@%@%@"
-    , ((modifierFlags & NSFunctionKeyMask) ? @"Fn" : @"")
+  modifierFlags = modifierFlags & NSDeviceIndependentModifierFlagsMask;
+  return [NSString stringWithFormat:@"%@%@%@%@"
+    // , ((modifierFlags & NSFunctionKeyMask) ? @"Fn" : @"")
     , ((modifierFlags & NSControlKeyMask) ? StringWithCodePoint(kControlUnicode) : @"")
     , ((modifierFlags & NSAlternateKeyMask) ? StringWithCodePoint(kOptionUnicode) : @"")
     , ((modifierFlags & NSShiftKeyMask) ? StringWithCodePoint(kShiftUnicode) : @"")
