@@ -20,9 +20,9 @@
   if (self != nil)
   {
     hotkeys = [[NSMutableArray alloc] init];
-    for (NSUInteger i = 0; i < [WindowManHotkeyPreferences() count]; i += 1)
+    for (NSString *key in WindowManHotkeyPreferences())
     {
-      [hotkeys addObject:[NSNull null]];
+      [hotkeys addObject:[NWHotkeyBox hotkeyBoxWithPreferencesRepresentation:[WindowManCommonPreferences valueForKey:key]]];
     }
   }
   
