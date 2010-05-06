@@ -73,7 +73,7 @@ NSBundle * NWHotkeyControlBundle()
   }
   else if ([(NWHotkeyBox *)value keyCode] == NWHotkeyBoxEmpty)
   {
-    return @"(None)";
+    return @"(none)";
   }
   
   NWHotkeyBox *hotkey = (NWHotkeyBox *)value;
