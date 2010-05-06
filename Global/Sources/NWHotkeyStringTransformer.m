@@ -12,59 +12,8 @@
 
 // Special keycodes.
 
-const NSInteger NWHotkeyControlF1KeyCode = 122;
-const NSInteger NWHotkeyControlF2KeyCode = 120;
-const NSInteger NWHotkeyControlF3KeyCode = 99;
-const NSInteger NWHotkeyControlF4KeyCode = 118;
-const NSInteger NWHotkeyControlF5KeyCode = 96;
-const NSInteger NWHotkeyControlF6KeyCode = 97;
-const NSInteger NWHotkeyControlF7KeyCode = 98;
-const NSInteger NWHotkeyControlF8KeyCode = 100;
-const NSInteger NWHotkeyControlF9KeyCode = 101;
-const NSInteger NWHotkeyControlF10KeyCode = 109;
-const NSInteger NWHotkeyControlF11KeyCode = 103;
-const NSInteger NWHotkeyControlF12KeyCode = 111;
-const NSInteger NWHotkeyControlF13KeyCode = 105;
-const NSInteger NWHotkeyControlF14KeyCode = 107;
-const NSInteger NWHotkeyControlF15KeyCode = 113;
-const NSInteger NWHotkeyControlF16KeyCode = 106;
-const NSInteger NWHotkeyControlF17KeyCode = 64;
-const NSInteger NWHotkeyControlF18KeyCode = 79;
-const NSInteger NWHotkeyControlF19KeyCode = 80;
-const NSInteger NWHotkeyControlSpaceKeyCode = 49;
-const NSInteger NWHotkeyControlDeleteLeftKeyCode = 51;
-const NSInteger NWHotkeyControlDeleteRightKeyCode = 117;
 const NSInteger NWHotkeyControlPadClearKeyCode = 71;
-const NSInteger NWHotkeyControlLeftArrowKeyCode = 123;
-const NSInteger NWHotkeyControlRightArrowKeyCode = 124;
-const NSInteger NWHotkeyControlUpArrowKeyCode = 126;
-const NSInteger NWHotkeyControlDownArrowKeyCode = 125;
-const NSInteger NWHotkeyControlSoutheastArrowKeyCode = 119;
-const NSInteger NWHotkeyControlNorthwestArrowKeyCode = 115;
-const NSInteger NWHotkeyControlEscapeKeyCode = 53;
-const NSInteger NWHotkeyControlPageDownKeyCode = 121;
-const NSInteger NWHotkeyControlPageUpKeyCode = 116;
-const NSInteger NWHotkeyControlReturnR2LKeyCode = 36;
-const NSInteger NWHotkeyControlReturnKeyCode = 76;
-const NSInteger NWHotkeyControlTabRightKeyCode = 48;
-const NSInteger NWHotkeyControlHelpKeyCode = 114;
 const NSInteger NWHotkeyControlNumpadCommaKeyCode = 65;
-const NSInteger NWHotkeyControlNumpadAsteriskKeyCode = 67;
-const NSInteger NWHotkeyControlNumpadPlusKeyCode = 69;
-const NSInteger NWHotkeyControlNumpadSlashKeyCode = 75;
-const NSInteger NWHotkeyControlNumpadHyphenKeyCode = 78;
-const NSInteger NWHotkeyControlNumpadEqualsKeyCode = 81;
-const NSInteger NWHotkeyControlNumpadZeroKeyCode = 82;
-const NSInteger NWHotkeyControlNumpadOneKeyCode = 83;
-const NSInteger NWHotkeyControlNumpadTwoKeyCode = 84;
-const NSInteger NWHotkeyControlNumpadThreeKeyCode = 85;
-const NSInteger NWHotkeyControlNumpadFourKeyCode = 86;
-const NSInteger NWHotkeyControlNumpadFiveKeyCode = 87;
-const NSInteger NWHotkeyControlNumpadSixKeyCode = 88;
-const NSInteger NWHotkeyControlNumpadSevenKeyCode = 89;
-const NSInteger NWHotkeyControlNumpadEightKeyCode = 91;
-const NSInteger NWHotkeyControlNumpadNineKeyCode = 92;
-
 
 // Useful code points.
 
@@ -166,42 +115,40 @@ static NSNumber * BoxInt(NSInteger anInteger)
   if (specialGlyphs == nil)
   {
     specialGlyphs = [[NSDictionary alloc] initWithObjectsAndKeys:
-        @"F1", BoxInt(NWHotkeyControlF1KeyCode)
-      , @"F2", BoxInt(NWHotkeyControlF2KeyCode)
-      , @"F3", BoxInt(NWHotkeyControlF3KeyCode)
-      , @"F4", BoxInt(NWHotkeyControlF4KeyCode)
-      , @"F5", BoxInt(NWHotkeyControlF5KeyCode)
-      , @"F6", BoxInt(NWHotkeyControlF6KeyCode)
-      , @"F7", BoxInt(NWHotkeyControlF7KeyCode)
-      , @"F8", BoxInt(NWHotkeyControlF8KeyCode)
-      , @"F9", BoxInt(NWHotkeyControlF9KeyCode)
-      , @"F10", BoxInt(NWHotkeyControlF10KeyCode)
-      , @"F11", BoxInt(NWHotkeyControlF11KeyCode)
-      , @"F12", BoxInt(NWHotkeyControlF12KeyCode)
-      , @"F13", BoxInt(NWHotkeyControlF13KeyCode)
-      , @"F14", BoxInt(NWHotkeyControlF14KeyCode)
-      , @"F15", BoxInt(NWHotkeyControlF15KeyCode)
-      , @"F16", BoxInt(NWHotkeyControlF16KeyCode)
-      , @"F17", BoxInt(NWHotkeyControlF17KeyCode)
-      , @"F18", BoxInt(NWHotkeyControlF18KeyCode)
-      , @"F19", BoxInt(NWHotkeyControlF19KeyCode)
-      , NWHotkeyControlLocalizedString(@"Space"), BoxInt(NWHotkeyControlSpaceKeyCode)
-      , StringWithCodePoint(NWHotkeyControlDeleteLeftCodePoint), BoxInt(NWHotkeyControlDeleteLeftKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlDeleteRightCodePoint), BoxInt(NWHotkeyControlDeleteRightKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlPadClearCodePoint), BoxInt(NWHotkeyControlPadClearKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlLeftArrowCodePoint), BoxInt(NWHotkeyControlLeftArrowKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlRightArrowCodePoint), BoxInt(NWHotkeyControlRightArrowKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlUpArrowCodePoint), BoxInt(NWHotkeyControlUpArrowKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlDownArrowCodePoint), BoxInt(NWHotkeyControlDownArrowKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlSoutheastArrowCodePoint), BoxInt(NWHotkeyControlSoutheastArrowKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlNorthwestArrowCodePoint), BoxInt(NWHotkeyControlNorthwestArrowKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlEscapeCodePoint), BoxInt(NWHotkeyControlEscapeKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlPageDownCodePoint), BoxInt(NWHotkeyControlPageDownKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlPageUpCodePoint), BoxInt(NWHotkeyControlPageUpKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlReturnR2LCodePoint), BoxInt(NWHotkeyControlReturnR2LKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlReturnCodePoint), BoxInt(NWHotkeyControlReturnKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlTabRightCodePoint), BoxInt(NWHotkeyControlTabRightKeyCode)
-  		, StringWithCodePoint(NWHotkeyControlHelpCodePoint), BoxInt(NWHotkeyControlHelpKeyCode)
+        @"F1", BoxInt(kVK_F1)
+      , @"F2", BoxInt(kVK_F2)
+      , @"F3", BoxInt(kVK_F3)
+      , @"F4", BoxInt(kVK_F4)
+      , @"F5", BoxInt(kVK_F5)
+      , @"F6", BoxInt(kVK_F6)
+      , @"F7", BoxInt(kVK_F7)
+      , @"F8", BoxInt(kVK_F8)
+      , @"F9", BoxInt(kVK_F9)
+      , @"F10", BoxInt(kVK_F10)
+      , @"F11", BoxInt(kVK_F11)
+      , @"F12", BoxInt(kVK_F12)
+      , @"F13", BoxInt(kVK_F13)
+      , @"F14", BoxInt(kVK_F14)
+      , @"F15", BoxInt(kVK_F15)
+      , @"F16", BoxInt(kVK_F16)
+      , @"F17", BoxInt(kVK_F17)
+      , @"F18", BoxInt(kVK_F18)
+      , @"F19", BoxInt(kVK_F19)
+      , NWHotkeyControlLocalizedString(@"Space"), BoxInt(kVK_Space)
+      , StringWithCodePoint(NWHotkeyControlDeleteLeftCodePoint), BoxInt(kVK_Delete)
+  		, StringWithCodePoint(NWHotkeyControlDeleteRightCodePoint), BoxInt(kVK_ForwardDelete)
+  		, StringWithCodePoint(NWHotkeyControlPadClearCodePoint), BoxInt(kVK_ANSI_KeypadClear)
+  		, StringWithCodePoint(NWHotkeyControlLeftArrowCodePoint), BoxInt(kVK_LeftArrow)
+  		, StringWithCodePoint(NWHotkeyControlRightArrowCodePoint), BoxInt(kVK_RightArrow)
+  		, StringWithCodePoint(NWHotkeyControlUpArrowCodePoint), BoxInt(kVK_UpArrow)
+  		, StringWithCodePoint(NWHotkeyControlDownArrowCodePoint), BoxInt(kVK_DownArrow)
+  		, StringWithCodePoint(NWHotkeyControlEscapeCodePoint), BoxInt(kVK_Escape)
+  		, StringWithCodePoint(NWHotkeyControlPageDownCodePoint), BoxInt(kVK_PageDown)
+  		, StringWithCodePoint(NWHotkeyControlPageUpCodePoint), BoxInt(kVK_PageUp)
+  		, StringWithCodePoint(NWHotkeyControlReturnCodePoint), BoxInt(kVK_Return)
+  		, StringWithCodePoint(NWHotkeyControlHelpCodePoint), BoxInt(kVK_Help)
+      , NWHotkeyControlLocalizedString(@"Home"), BoxInt(kVK_Home)
+      , NWHotkeyControlLocalizedString(@"End"), BoxInt(kVK_End)
       , nil];
   }
   
@@ -209,22 +156,23 @@ static NSNumber * BoxInt(NSInteger anInteger)
   if (numpadKeyCodes == nil)
   {
     numpadKeyCodes = [NSArray arrayWithObjects:
-        BoxInt(NWHotkeyControlNumpadCommaKeyCode)
-      , BoxInt(NWHotkeyControlNumpadAsteriskKeyCode)
-      , BoxInt(NWHotkeyControlNumpadPlusKeyCode)
-      , BoxInt(NWHotkeyControlNumpadSlashKeyCode)
-      , BoxInt(NWHotkeyControlNumpadHyphenKeyCode)
-      , BoxInt(NWHotkeyControlNumpadEqualsKeyCode)
-      , BoxInt(NWHotkeyControlNumpadZeroKeyCode)
-      , BoxInt(NWHotkeyControlNumpadOneKeyCode)
-      , BoxInt(NWHotkeyControlNumpadTwoKeyCode)
-      , BoxInt(NWHotkeyControlNumpadThreeKeyCode)
-      , BoxInt(NWHotkeyControlNumpadFourKeyCode)
-      , BoxInt(NWHotkeyControlNumpadFiveKeyCode)
-      , BoxInt(NWHotkeyControlNumpadSixKeyCode)
-      , BoxInt(NWHotkeyControlNumpadSevenKeyCode)
-      , BoxInt(NWHotkeyControlNumpadEightKeyCode)
-      , BoxInt(NWHotkeyControlNumpadNineKeyCode)
+        BoxInt(kVK_ANSI_KeypadDecimal)
+      , BoxInt(NWHotkeyControlNumpadCommaKeyCode)
+      , BoxInt(kVK_ANSI_KeypadMultiply)
+      , BoxInt(kVK_ANSI_KeypadPlus)
+      , BoxInt(kVK_ANSI_KeypadDivide)
+      , BoxInt(kVK_ANSI_KeypadMinus)
+      , BoxInt(kVK_ANSI_KeypadEquals)
+      , BoxInt(kVK_ANSI_Keypad0)
+      , BoxInt(kVK_ANSI_Keypad1)
+      , BoxInt(kVK_ANSI_Keypad2)
+      , BoxInt(kVK_ANSI_Keypad3)
+      , BoxInt(kVK_ANSI_Keypad4)
+      , BoxInt(kVK_ANSI_Keypad5)
+      , BoxInt(kVK_ANSI_Keypad6)
+      , BoxInt(kVK_ANSI_Keypad7)
+      , BoxInt(kVK_ANSI_Keypad8)
+      , BoxInt(kVK_ANSI_Keypad9)
       , nil];
   }
   
