@@ -13,6 +13,7 @@ const NSInteger NWHotkeyBoxEmpty = -1;
 
 static NSString * NWHotkeyBoxPreferencesKeyCodeKey = @"keyCode";
 static NSString * NWHotkeyBoxPreferencesModifierFlagsKey = @"modifierFlags";
+static NSString * NWHotkeyBoxPreferencesCharacterIgnoringModifiersKey = @"cim";
 
 // Following two sniped from ShortcutRecorder (BSD license).
 // TODO: ensure we're following their license here.
@@ -87,7 +88,13 @@ NSUInteger SRCocoaToCarbonFlags(NSUInteger cocoaFlags)
   NWHotkeyBox *hotkeyBox = [[self alloc] init];
   hotkeyBox.keyCode = [[preferencesRepresentation valueForKey:NWHotkeyBoxPreferencesKeyCodeKey] integerValue];
   hotkeyBox.modifierFlags = [[preferencesRepresentation valueForKey:NWHotkeyBoxPreferencesModifierFlagsKey] integerValue];
+  hotkeyBox.characterIgnoringModifiers = [[preferencesRepresentation valueForKey:NWHotkeyBoxPreferencesCharacterIgnoringModifiersKey] stringValue];
   return [hotkeyBox autorelease];
+}
+
+static id NilToNull(id couldBeNil)
+{
+  return couldBeNil == nil ? [NSNull null] : nil;
 }
 
 // Provides a representation suitable for storing in preferences.
@@ -96,6 +103,7 @@ NSUInteger SRCocoaToCarbonFlags(NSUInteger cocoaFlags)
   return [NSDictionary dictionaryWithObjectsAndKeys:
       [NSNumber numberWithInteger:self.keyCode], NWHotkeyBoxPreferencesKeyCodeKey
     , [NSNumber numberWithInteger:self.modifierFlags], NWHotkeyBoxPreferencesModifierFlagsKey
+    , NilToNull(self.characterIgnoringModifiers), NWHotkeyBoxPreferencesCharacterIgnoringModifiersKey
     , nil];
 }
 
