@@ -8,11 +8,21 @@
 
 #import "WindowManPref.h"
 #import "WindowManHotkeyTextView.h"
+#import "NWLoginItems.h"
+
+
+@interface WindowManPref ()
+
+// Returns the path of |bundledApp| relative to this bundle's Resources directory.
+- (NSString *)pathForBundledApp:(NSString *)bundledApp;
+
+@end
 
 
 @implementation WindowManPref
 
 @synthesize hotkeyTable;
+@synthesize helperStartOnLoginCheckBox;
 
 - (id)initWithBundle:(NSBundle *)bundle
 {
@@ -37,9 +47,27 @@
   [super dealloc];
 }
 
-- (void)mainViewDidLoad
+- (void)willSelect
 {
-  
+  self.helperStartOnLoginCheckBox.state = [NWLoginItems isBundleAtPathInSessionLoginItems:[self pathForBundledApp:@"WindowManHelper.app"]] ? NSOnState : NSOffState;
+}
+
+- (NSString *)pathForBundledApp:(NSString *)bundledApp
+{
+  return [[[self bundle] resourcePath] stringByAppendingPathComponent:bundledApp];
+}
+
+- (IBAction)toggleStartWindowManHelperOnLogin:(id)sender
+{
+  NSString *helperPath = [self pathForBundledApp:@"WindowManHelper.app"];
+  if ([sender state])
+  {
+    [NWLoginItems addBundleAtPathToSessionLoginItems:helperPath];
+  }
+  else
+  {
+    [NWLoginItems removeBundleAtPathFromSessionLoginItems:helperPath];
+  }
 }
 
 // NSTableViewDataSource

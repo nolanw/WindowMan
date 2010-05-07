@@ -13,10 +13,12 @@
 {
   NSMutableArray *hotkeys;
   NSTableView *hotkeyTable;
+  NSButton *helperStartOnLoginCheckBox;
 }
 
 @property (nonatomic, retain) IBOutlet NSTableView *hotkeyTable;
+@property (nonatomic, retain) IBOutlet NSButton *helperStartOnLoginCheckBox;
 
-- (void)mainViewDidLoad;
+- (IBAction)toggleStartWindowManHelperOnLogin:(id)sender;
 
 @end
