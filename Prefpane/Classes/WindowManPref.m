@@ -73,7 +73,19 @@
 
 - (void)controlTextDidEndEditing:(NSNotification *)note
 {
-  [hotkeys replaceObjectAtIndex:[hotkeyTable selectedRow] withObject:[(WindowManHotkeyTextView *)[[note userInfo] valueForKey:@"NSFieldEditor"] hotkey]];
+  // Update table view source.
+  NSUInteger prefIndex = [hotkeyTable selectedRow];
+  [hotkeys replaceObjectAtIndex:prefIndex withObject:[(WindowManHotkeyTextView *)[[note userInfo] valueForKey:@"NSFieldEditor"] hotkey]];
+  
+  // Update preferences.
+  NSString *prefKey = [WindowManHotkeyPreferences() objectAtIndex:prefIndex];
+  [WindowManCommonPreferences setValue:[[hotkeys objectAtIndex:prefIndex] preferencesRepresentation] forKey:prefKey];
+  [WindowManCommonPreferences synchronize];
+  
+  // Notify other WindowMan apps about changed preference.
+  NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:prefKey, WindowManChangedPreferenceKey, nil];
+  NSDistributedNotificationCenter *noteCenter = [NSDistributedNotificationCenter defaultCenter];
+  [noteCenter postNotificationName:(NSString *)WindowManHotkeyPreferencesDidChangeNotification object:nil userInfo:userInfo];
 }
 
 @end
