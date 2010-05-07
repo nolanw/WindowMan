@@ -24,6 +24,13 @@
 @synthesize hotkeyTable;
 @synthesize helperStartOnLoginCheckBox;
 @synthesize helperIsRunningCheckBox;
+@synthesize accessibilityAPIEnabledTabView;
+@synthesize openUniversalAccessPrefpaneButton;
+
+static NSString * WindowManAccessibilityEnabledTabViewItemID = @"AccessibilityEnabled";
+static NSString * WindowManAccessibilityDisabledTabViewItemID = @"AccessibilityDisabled";
+static NSString * WindowManUniversalAccessPrefpanePath = @"/System/Library/PreferencePanes/UniversalAccessPref.prefPane";
+static NSString * WindowManHelperAppFilename = @"WindowManHelper.app";
 
 - (id)initWithBundle:(NSBundle *)bundle
 {
@@ -50,8 +57,19 @@
 
 - (void)willSelect
 {
-  self.helperStartOnLoginCheckBox.state = [NWLoginItems isBundleAtPathInSessionLoginItems:[self pathForBundledApp:@"WindowManHelper.app"]] ? NSOnState : NSOffState;
-  self.helperIsRunningCheckBox.state = ([[NSRunningApplication runningApplicationsWithBundleIdentifier:WindowManHelperBundleIdentifier] count] > 0) ? NSOnState : NSOffState;
+  if (!AXAPIEnabled())
+  {
+    [self.accessibilityAPIEnabledTabView selectTabViewItemWithIdentifier:WindowManAccessibilityDisabledTabViewItemID];
+    NSFileManager *fileManager = [[[NSFileManager alloc] init] autorelease];
+    [self.openUniversalAccessPrefpaneButton setHidden:![fileManager isExecutableFileAtPath:WindowManUniversalAccessPrefpanePath]];
+    [self.openUniversalAccessPrefpaneButton setEnabled:![self.openUniversalAccessPrefpaneButton isHidden]];
+  }
+  else
+  {
+    [self.accessibilityAPIEnabledTabView selectTabViewItemWithIdentifier:WindowManAccessibilityEnabledTabViewItemID];
+  }
+  [self.helperStartOnLoginCheckBox setState:[NWLoginItems isBundleAtPathInSessionLoginItems:[self pathForBundledApp:WindowManHelperAppFilename]] ? NSOnState : NSOffState];
+  [self.helperIsRunningCheckBox setState:([[NSRunningApplication runningApplicationsWithBundleIdentifier:WindowManHelperBundleIdentifier] count] > 0) ? NSOnState : NSOffState];
 }
 
 - (NSString *)pathForBundledApp:(NSString *)bundledApp
@@ -61,7 +79,7 @@
 
 - (IBAction)toggleStartWindowManHelperOnLogin:(id)sender
 {
-  NSString *helperPath = [self pathForBundledApp:@"WindowManHelper.app"];
+  NSString *helperPath = [self pathForBundledApp:WindowManHelperAppFilename];
   if ([sender state])
   {
     [NWLoginItems addBundleAtPathToSessionLoginItems:helperPath];
@@ -76,13 +94,18 @@
 {
   if ([sender state] == NSOnState)
   {
-    NSURL *helperURL = [NSURL fileURLWithPath:[self pathForBundledApp:@"WindowManHelper.app"]];
+    NSURL *helperURL = [NSURL fileURLWithPath:[self pathForBundledApp:WindowManHelperAppFilename]];
     [[NSWorkspace sharedWorkspace] launchApplicationAtURL:helperURL options:NSWorkspaceLaunchWithoutActivation configuration:[NSDictionary dictionary] error:nil];
   }
   else
   {
     [[NSDistributedNotificationCenter defaultCenter] postNotificationName:WindowManTerminateHelperAppNotification object:nil];
   }
+}
+
+- (IBAction)openUniversalAccessPrefpane:(id)sender
+{
+  [[NSWorkspace sharedWorkspace] openFile:WindowManUniversalAccessPrefpanePath withApplication:nil andDeactivate:NO];
 }
 
 // NSTableViewDataSource
