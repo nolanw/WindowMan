@@ -31,7 +31,24 @@
 		F28E51651191659300880FFF /* WindowManHotkeyCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E51631191659300880FFF /* WindowManHotkeyCell.h */; };
 		F28E51661191659300880FFF /* WindowManHotkeyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E51641191659300880FFF /* WindowManHotkeyCell.m */; };
 		F28E52D01193615800880FFF /* WindowManPreferences.strings in Resources */ = {isa = PBXBuildFile; fileRef = F28E52CF1193615800880FFF /* WindowManPreferences.strings */; };
+		F28E535C11937F6A00880FFF /* WindowManNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E535A11937F6A00880FFF /* WindowManNotifications.h */; };
+		F28E535D11937F6A00880FFF /* WindowManNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E535B11937F6A00880FFF /* WindowManNotifications.m */; };
+		F28E53AA1193CF0B00880FFF /* WindowManHelper.app in Resources */ = {isa = PBXBuildFile; fileRef = F28E539C1193CEEF00880FFF /* WindowManHelper.app */; };
+		F28E53B01193CF5800880FFF /* WindowManBundleIdentifiers.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E53AE1193CF5800880FFF /* WindowManBundleIdentifiers.h */; };
+		F28E53B11193CF5800880FFF /* WindowManBundleIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E53AF1193CF5800880FFF /* WindowManBundleIdentifiers.m */; };
+		F28E53BD1193D11D00880FFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E53BC1193D11D00880FFF /* main.m */; };
+		F28E53C01193D13000880FFF /* WindowManHelperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E53BF1193D13000880FFF /* WindowManHelperAppDelegate.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F28E53A21193CF0100880FFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F28E539B1193CEEF00880FFF /* WindowManHelper */;
+			remoteInfo = WindowManHelper;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -57,6 +74,15 @@
 		F28E51631191659300880FFF /* WindowManHotkeyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManHotkeyCell.h; sourceTree = "<group>"; };
 		F28E51641191659300880FFF /* WindowManHotkeyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManHotkeyCell.m; sourceTree = "<group>"; };
 		F28E52C9119360B800880FFF /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/WindowManPreferences.strings; sourceTree = "<group>"; };
+		F28E535A11937F6A00880FFF /* WindowManNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManNotifications.h; sourceTree = "<group>"; };
+		F28E535B11937F6A00880FFF /* WindowManNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManNotifications.m; sourceTree = "<group>"; };
+		F28E539C1193CEEF00880FFF /* WindowManHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WindowManHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F28E539E1193CEEF00880FFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F28E53AE1193CF5800880FFF /* WindowManBundleIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManBundleIdentifiers.h; sourceTree = "<group>"; };
+		F28E53AF1193CF5800880FFF /* WindowManBundleIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManBundleIdentifiers.m; sourceTree = "<group>"; };
+		F28E53BC1193D11D00880FFF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F28E53BE1193D13000880FFF /* WindowManHelperAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManHelperAppDelegate.h; sourceTree = "<group>"; };
+		F28E53BF1193D13000880FFF /* WindowManHelperAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManHelperAppDelegate.m; sourceTree = "<group>"; };
 		F506C035013D953901CA16C8 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
 		F506C03C013D9D7901CA16C8 /* WindowManPref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManPref.h; sourceTree = "<group>"; };
 		F506C03D013D9D7901CA16C8 /* WindowManPref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManPref.m; sourceTree = "<group>"; };
@@ -75,12 +101,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F28E539A1193CEEF00880FFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		089C166AFE841209C02AAC07 /* WindowMan */ = {
 			isa = PBXGroup;
 			children = (
+				F28E53B41193CFB500880FFF /* Helper */,
 				F28E52D11193617C00880FFF /* Global */,
 				F28E51071191205200880FFF /* Prefpane */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
@@ -147,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				8D202CF80486D31800D8A456 /* WindowMan.prefPane */,
+				F28E539C1193CEEF00880FFF /* WindowManHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,10 +194,14 @@
 				F28E50FD11911F9E00880FFF /* WindowManCommonPreferences.m */,
 				F28E5111119123A000880FFF /* WindowManHotkeyPreferences.h */,
 				F28E5112119123A000880FFF /* WindowManHotkeyPreferences.m */,
+				F28E535A11937F6A00880FFF /* WindowManNotifications.h */,
+				F28E535B11937F6A00880FFF /* WindowManNotifications.m */,
 				F28E51271191282E00880FFF /* NWHotkeyBox.h */,
 				F28E51281191282E00880FFF /* NWHotkeyBox.m */,
 				F28E51291191282E00880FFF /* NWHotkeyStringTransformer.h */,
 				F28E512A1191282E00880FFF /* NWHotkeyStringTransformer.m */,
+				F28E53AE1193CF5800880FFF /* WindowManBundleIdentifiers.h */,
+				F28E53AF1193CF5800880FFF /* WindowManBundleIdentifiers.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -193,6 +232,33 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F28E53B41193CFB500880FFF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F28E53BB1193CFFD00880FFF /* Sources */,
+				F28E53B51193CFC300880FFF /* Resources */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		F28E53B51193CFC300880FFF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F28E539E1193CEEF00880FFF /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F28E53BB1193CFFD00880FFF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F28E53BC1193D11D00880FFF /* main.m */,
+				F28E53BE1193D13000880FFF /* WindowManHelperAppDelegate.h */,
+				F28E53BF1193D13000880FFF /* WindowManHelperAppDelegate.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -209,6 +275,8 @@
 				F28E514111912A6600880FFF /* NWLoginItems.h in Headers */,
 				F28E515311915E8B00880FFF /* WindowManHotkeyTextView.h in Headers */,
 				F28E51651191659300880FFF /* WindowManHotkeyCell.h in Headers */,
+				F28E535C11937F6A00880FFF /* WindowManNotifications.h in Headers */,
+				F28E53B01193CF5800880FFF /* WindowManBundleIdentifiers.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,12 +296,30 @@
 			buildRules = (
 			);
 			dependencies = (
+				F28E53A31193CF0100880FFF /* PBXTargetDependency */,
 			);
 			name = WindowMan;
 			productInstallPath = "$(HOME)/Library/PreferencePanes";
 			productName = WindowMan;
 			productReference = 8D202CF80486D31800D8A456 /* WindowMan.prefPane */;
 			productType = "com.apple.product-type.bundle";
+		};
+		F28E539B1193CEEF00880FFF /* WindowManHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F28E53A11193CEF000880FFF /* Build configuration list for PBXNativeTarget "WindowManHelper" */;
+			buildPhases = (
+				F28E53981193CEEF00880FFF /* Resources */,
+				F28E53991193CEEF00880FFF /* Sources */,
+				F28E539A1193CEEF00880FFF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WindowManHelper;
+			productName = WindowManHelper;
+			productReference = F28E539C1193CEEF00880FFF /* WindowManHelper.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -248,6 +334,7 @@
 			projectRoot = "";
 			targets = (
 				8D202CE80486D31800D8A456 /* WindowMan */,
+				F28E539B1193CEEF00880FFF /* WindowManHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -261,6 +348,14 @@
 				8D202CEE0486D31800D8A456 /* WindowManPref.tiff in Resources */,
 				8D202CEF0486D31800D8A456 /* WindowManPref.xib in Resources */,
 				F28E52D01193615800880FFF /* WindowManPreferences.strings in Resources */,
+				F28E53AA1193CF0B00880FFF /* WindowManHelper.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F28E53981193CEEF00880FFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,10 +384,29 @@
 				F28E514211912A6600880FFF /* NWLoginItems.m in Sources */,
 				F28E515411915E8B00880FFF /* WindowManHotkeyTextView.m in Sources */,
 				F28E51661191659300880FFF /* WindowManHotkeyCell.m in Sources */,
+				F28E535D11937F6A00880FFF /* WindowManNotifications.m in Sources */,
+				F28E53B11193CF5800880FFF /* WindowManBundleIdentifiers.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F28E53991193CEEF00880FFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F28E53BD1193D11D00880FFF /* main.m in Sources */,
+				F28E53C01193D13000880FFF /* WindowManHelperAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F28E53A31193CF0100880FFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F28E539B1193CEEF00880FFF /* WindowManHelper */;
+			targetProxy = F28E53A21193CF0100880FFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
@@ -384,6 +498,54 @@
 			};
 			name = Release;
 		};
+		F28E539F1193CEF000880FFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = Helper/Resources/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = WindowManHelper;
+			};
+			name = Debug;
+		};
+		F28E53A01193CEF000880FFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = Helper/Resources/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = WindowManHelper;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -401,6 +563,15 @@
 			buildConfigurations = (
 				1DBD214D08BA80EA00186707 /* Debug */,
 				1DBD214E08BA80EA00186707 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F28E53A11193CEF000880FFF /* Build configuration list for PBXNativeTarget "WindowManHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F28E539F1193CEF000880FFF /* Debug */,
+				F28E53A01193CEF000880FFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
