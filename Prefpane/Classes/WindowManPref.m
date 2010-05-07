@@ -153,11 +153,19 @@ static NSString * WindowManPrefpaneHotkeyColumnID = @"hotkey";
   }
 }
 
+// NSControlTextEditingDelegate
+
 - (void)controlTextDidEndEditing:(NSNotification *)note
 {
   // Update table view source.
   NSUInteger prefIndex = [hotkeyTable selectedRow];
-  [hotkeys replaceObjectAtIndex:prefIndex withObject:[(WindowManHotkeyTextView *)[[note userInfo] valueForKey:@"NSFieldEditor"] hotkey]];
+  NWHotkeyBox *hotkey = [(WindowManHotkeyTextView *)[[note userInfo] valueForKey:@"NSFieldEditor"] hotkey];
+  if (hotkey == nil)
+  {
+    // Not changing preferences (e.g. user canceled editing).
+    return;
+  }
+  [hotkeys replaceObjectAtIndex:prefIndex withObject:hotkey];
   
   // Update preferences.
   NSString *prefKey = [WindowManHotkeyPreferences() objectAtIndex:prefIndex];
