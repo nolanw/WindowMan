@@ -7,6 +7,7 @@
 //
 
 #import "WindowManHelperAppDelegate.h"
+#import "WindowManMoverSizer.h"
 
 
 @interface WindowManHelperAppDelegate ()
@@ -122,7 +123,24 @@ OSStatus HotkeyHandler(EventHandlerCallRef nextHandler, EventRef event, void *us
 
 - (void)performActionAtIndex:(NSUInteger)actionIndex
 {
-  NSLog(@"%s hotkey for action %d", _cmd, actionIndex);
+  // Basic dispatch table.
+  static NSDictionary *actionsByPref = nil;
+  if (actionsByPref == nil)
+  {
+    actionsByPref = [[NSDictionary alloc] initWithObjects:
+      [NSArray arrayWithObjects:@"occupyLeftHalf"
+      , @"occupyRightHalf"
+      , @"occupyTopLeftQuarter"
+      , @"occupyTopRightQuarter"
+      , @"occupyBottomRightQuarter"
+      , @"occupyBottomLeftQuarter"
+      , @"occupyCenter"
+      , @"occupyEntireScreen"
+      , nil]
+      forKeys: WindowManHotkeyPreferences()];
+  }
+  SEL action = sel_registerName([[actionsByPref objectForKey:[WindowManHotkeyPreferences() objectAtIndex:actionIndex]] cStringUsingEncoding:NSASCIIStringEncoding]);
+  [WindowManMoverSizer performSelector:action];
 }
 
 // NSApplicationDelegate
