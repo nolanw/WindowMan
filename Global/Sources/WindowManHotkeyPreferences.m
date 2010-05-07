@@ -8,16 +8,16 @@
 
 #import "WindowManHotkeyPreferences.h"
 
-NSString * const WindowManHotkeyPreferenceLeftHalf = @"WindowManHotkeyPreferenceLeftHalf";
-NSString * const WindowManHotkeyPreferenceRightHalf = @"WindowManHotkeyPreferenceRightHalf";
+NSString * WindowManHotkeyPreferenceLeftHalf = @"WindowManHotkeyPreferenceLeftHalf";
+NSString * WindowManHotkeyPreferenceRightHalf = @"WindowManHotkeyPreferenceRightHalf";
 
-NSString * const WindowManHotkeyPreferenceTopLeftQuarter = @"WindowManHotkeyPreferenceTopLeftQuarter";
-NSString * const WindowManHotkeyPreferenceTopRightQuarter = @"WindowManHotkeyPreferenceTopRightQuarter";
-NSString * const WindowManHotkeyPreferenceBottomRightQuarter = @"WindowManHotkeyPreferenceBottomRightQuarter";
-NSString * const WindowManHotkeyPreferenceBottomLeftQuarter = @"WindowManHotkeyPreferenceBottomLeftQuarter";
+NSString * WindowManHotkeyPreferenceTopLeftQuarter = @"WindowManHotkeyPreferenceTopLeftQuarter";
+NSString * WindowManHotkeyPreferenceTopRightQuarter = @"WindowManHotkeyPreferenceTopRightQuarter";
+NSString * WindowManHotkeyPreferenceBottomRightQuarter = @"WindowManHotkeyPreferenceBottomRightQuarter";
+NSString * WindowManHotkeyPreferenceBottomLeftQuarter = @"WindowManHotkeyPreferenceBottomLeftQuarter";
 
-NSString * const WindowManHotkeyPreferenceCenter = @"WindowManHotkeyPreferenceCenter";
-NSString * const WindowManHotkeyPreferenceMaximize = @"WindowManHotkeyPreferenceMaximize";
+NSString * WindowManHotkeyPreferenceCenter = @"WindowManHotkeyPreferenceCenter";
+NSString * WindowManHotkeyPreferenceMaximize = @"WindowManHotkeyPreferenceMaximize";
 
 NSArray * WindowManHotkeyPreferences()
 {

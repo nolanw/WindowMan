@@ -8,10 +8,10 @@
 
 // Sent when a hotkey setting changes. Note's userInfo contains the preference key 
 // where the new hotkey is stored.
-extern const NSString * WindowManHotkeyPreferencesDidChangeNotification;
+extern NSString * WindowManHotkeyPreferencesDidChangeNotification;
 
 // userInfo key for PreferencesDidChangeNotification for new hotkey preference.
-extern const NSString * WindowManChangedPreferenceKey;
+extern NSString * WindowManChangedPreferenceKey;
 
 // The Helper app listens for this notification and terminates when notified.
-extern const NSString * WindowManTerminateHelperAppNotification;
+extern NSString * WindowManTerminateHelperAppNotification;

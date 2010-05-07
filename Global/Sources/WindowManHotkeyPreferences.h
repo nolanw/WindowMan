@@ -10,15 +10,15 @@
 extern NSArray * WindowManHotkeyPreferences();
 
 // Halfsies
-extern NSString * const WindowManHotkeyPreferenceLeftHalf;
-extern NSString * const WindowManHotkeyPreferenceRightHalf;
+extern NSString * WindowManHotkeyPreferenceLeftHalf;
+extern NSString * WindowManHotkeyPreferenceRightHalf;
 
 // Quarters
-extern NSString * const WindowManHotkeyPreferenceTopLeftQuarter;
-extern NSString * const WindowManHotkeyPreferenceTopRightQuarter;
-extern NSString * const WindowManHotkeyPreferenceBottomRightQuarter;
-extern NSString * const WindowManHotkeyPreferenceBottomLeftQuarter;
+extern NSString * WindowManHotkeyPreferenceTopLeftQuarter;
+extern NSString * WindowManHotkeyPreferenceTopRightQuarter;
+extern NSString * WindowManHotkeyPreferenceBottomRightQuarter;
+extern NSString * WindowManHotkeyPreferenceBottomLeftQuarter;
 
 // Moving, no resizing
-extern NSString * const WindowManHotkeyPreferenceCenter;
-extern NSString * const WindowManHotkeyPreferenceMaximize;
+extern NSString * WindowManHotkeyPreferenceCenter;
+extern NSString * WindowManHotkeyPreferenceMaximize;

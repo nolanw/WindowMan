@@ -51,7 +51,7 @@
 - (void)willSelect
 {
   self.helperStartOnLoginCheckBox.state = [NWLoginItems isBundleAtPathInSessionLoginItems:[self pathForBundledApp:@"WindowManHelper.app"]] ? NSOnState : NSOffState;
-  self.helperIsRunningCheckBox.state = ([[NSRunningApplication runningApplicationsWithBundleIdentifier:(NSString *)WindowManHelperBundleIdentifier] count] > 0) ? NSOnState : NSOffState;
+  self.helperIsRunningCheckBox.state = ([[NSRunningApplication runningApplicationsWithBundleIdentifier:WindowManHelperBundleIdentifier] count] > 0) ? NSOnState : NSOffState;
 }
 
 - (NSString *)pathForBundledApp:(NSString *)bundledApp
@@ -81,7 +81,7 @@
   }
   else
   {
-    [[NSDistributedNotificationCenter defaultCenter] postNotificationName:(NSString *)WindowManTerminateHelperAppNotification object:nil];
+    [[NSDistributedNotificationCenter defaultCenter] postNotificationName:WindowManTerminateHelperAppNotification object:nil];
   }
 }
 
@@ -128,7 +128,7 @@
   // Notify other WindowMan apps about changed preference.
   NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:prefKey, WindowManChangedPreferenceKey, nil];
   NSDistributedNotificationCenter *noteCenter = [NSDistributedNotificationCenter defaultCenter];
-  [noteCenter postNotificationName:(NSString *)WindowManHotkeyPreferencesDidChangeNotification object:nil userInfo:userInfo];
+  [noteCenter postNotificationName:WindowManHotkeyPreferencesDidChangeNotification object:nil userInfo:userInfo];
 }
 
 @end

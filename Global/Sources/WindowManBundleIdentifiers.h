@@ -6,5 +6,5 @@
 //  Copyright 2010 Nolan Waite. All rights reserved.
 //
 
-extern const NSString * WindowManHelperBundleIdentifier;
-extern const NSString * WindowManMenuBundleIdentifier;
+extern NSString * WindowManHelperBundleIdentifier;
+extern NSString * WindowManMenuBundleIdentifier;

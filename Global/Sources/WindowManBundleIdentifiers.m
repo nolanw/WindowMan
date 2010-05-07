@@ -9,5 +9,5 @@
 #import "WindowManBundleIdentifiers.h"
 
 
-const NSString * WindowManHelperBundleIdentifier = @"ca.nolanw.WindowMan.Helper";
-const NSString * WindowManMenuBundleIdentifier = @"ca.nolanw.WindowMan.Menu";
+NSString * WindowManHelperBundleIdentifier = @"ca.nolanw.WindowMan.Helper";
+NSString * WindowManMenuBundleIdentifier = @"ca.nolanw.WindowMan.Menu";

@@ -101,7 +101,7 @@ OSStatus HotkeyHandler(EventHandlerCallRef nextHandler, EventRef event, void *us
 - (void)applicationDidFinishLaunching:(NSNotification *)note
 {
   NSDistributedNotificationCenter *noteCenter = [NSDistributedNotificationCenter defaultCenter];
-  [noteCenter addObserver:self selector:@selector(terminate:) name:(NSString *)WindowManTerminateHelperAppNotification object:nil];
+  [noteCenter addObserver:NSApp selector:@selector(terminate:) name:WindowManTerminateHelperAppNotification object:nil];
   
   EventTypeSpec eventType;
   eventType.eventClass = kEventClassKeyboard;

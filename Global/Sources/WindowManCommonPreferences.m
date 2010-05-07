@@ -16,9 +16,9 @@
 
 @implementation WindowManCommonPreferences
 
-const CFStringRef WindowManPreferencesIdentifier = (const CFStringRef)@"ca.nolanw.WindowMan";
+CFStringRef WindowManPreferencesIdentifier = (const CFStringRef)@"ca.nolanw.WindowMan";
 
-const NSString * WindowManLocalizedPreferenceDescriptionTable = @"WindowManPreferences";
+NSString * WindowManLocalizedPreferenceDescriptionTable = @"WindowManPreferences";
 
 + (id)valueForKey:(NSString *)key
 {
@@ -46,7 +46,7 @@ const NSString * WindowManLocalizedPreferenceDescriptionTable = @"WindowManPrefe
 + (NSString *)localizedDescriptionWithPreference:(NSString *)pref
 {
   NSBundle *thisBundle = [NSBundle bundleForClass:[WindowManCommonPreferencesBundleFinder class]];
-  return [thisBundle localizedStringForKey:pref value:pref table:(NSString *)WindowManLocalizedPreferenceDescriptionTable];
+  return [thisBundle localizedStringForKey:pref value:pref table:WindowManLocalizedPreferenceDescriptionTable];
 }
 
 @end

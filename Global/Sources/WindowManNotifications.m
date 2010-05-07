@@ -8,7 +8,7 @@
 
 #import "WindowManNotifications.h"
 
-const NSString * WindowManHotkeyPreferencesDidChangeNotification = @"WindowManHotkeyPreferencesDidChangeNotification";
-const NSString * WindowManChangedPreferenceKey = @"WindowManChangedPreferenceKey";
+NSString * WindowManHotkeyPreferencesDidChangeNotification = @"WindowManHotkeyPreferencesDidChangeNotification";
+NSString * WindowManChangedPreferenceKey = @"WindowManChangedPreferenceKey";
 
-const NSString * WindowManTerminateHelperAppNotification = @"WindowManTerminateHelperAppNotification";
+NSString * WindowManTerminateHelperAppNotification = @"WindowManTerminateHelperAppNotification";
