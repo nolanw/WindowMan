@@ -13,9 +13,11 @@
 @interface WindowManHotkeyTextView : NSTextView
 {
   NWHotkeyBox *hotkey;
+  BOOL requireAtLeastTwoModifiers;
 }
 
 // The boxed hotkey whose string value is currently set.
 @property (nonatomic, readonly, retain) NWHotkeyBox *hotkey;
+@property (nonatomic, assign) BOOL requireAtLeastTwoModifiers;
 
 @end

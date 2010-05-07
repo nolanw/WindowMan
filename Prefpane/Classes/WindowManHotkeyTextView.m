@@ -29,6 +29,16 @@ static inline NSUInteger ScrubModifierFlags(NSUInteger modifierFlags);
 @implementation WindowManHotkeyTextView
 
 @synthesize hotkey;
+@synthesize requireAtLeastTwoModifiers;
+
+static NSUInteger ModifierPairs[] = 
+{ NSControlKeyMask | NSAlternateKeyMask
+, NSShiftKeyMask | NSCommandKeyMask
+, NSControlKeyMask | NSShiftKeyMask
+, NSControlKeyMask | NSCommandKeyMask
+, NSAlternateKeyMask | NSShiftKeyMask
+, NSAlternateKeyMask | NSCommandKeyMask
+};
 
 - (void)setStringValue:(NSString *)string
 {
@@ -81,6 +91,25 @@ static inline NSUInteger ScrubModifierFlags(NSUInteger modifierFlags)
 {
   NSString *keyEquivalent = [event charactersIgnoringModifiers];
   NSUInteger modifierFlags = ScrubModifierFlags([event modifierFlags]);
+  
+  if (self.requireAtLeastTwoModifiers)
+  {
+    BOOL success = NO;
+    for (NSUInteger modifierPairsIndex = 0; modifierPairsIndex < 6; modifierPairsIndex--)
+    {
+      if ((modifierFlags & ModifierPairs[modifierPairsIndex]) == ModifierPairs[modifierPairsIndex])
+      {
+        success = YES;
+        break;
+      }
+    }
+    if (!success)
+    {
+      self.hotkey = nil;
+      [self endEditing];
+      return YES;
+    }
+  }
   
   static NWHotkeyStringTransformer *transformer = nil;
   if (transformer == nil)

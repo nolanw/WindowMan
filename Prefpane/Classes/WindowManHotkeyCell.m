@@ -20,6 +20,7 @@
   if (fieldEditor == nil)
   {
     fieldEditor = [[WindowManHotkeyTextView alloc] initWithFrame:NSZeroRect];
+    fieldEditor.requireAtLeastTwoModifiers = YES;
   }
 
   return fieldEditor;
