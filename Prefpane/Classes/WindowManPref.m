@@ -122,7 +122,8 @@
   
   // Update preferences.
   NSString *prefKey = [WindowManHotkeyPreferences() objectAtIndex:prefIndex];
-  [WindowManCommonPreferences setValue:[[hotkeys objectAtIndex:prefIndex] preferencesRepresentation] forKey:prefKey];
+  NSDictionary *prefValue = [[hotkeys objectAtIndex:prefIndex] preferencesRepresentation];
+  [WindowManCommonPreferences setValue:prefValue forKey:prefKey];
   [WindowManCommonPreferences synchronize];
   
   // Notify other WindowMan apps about changed preference.
