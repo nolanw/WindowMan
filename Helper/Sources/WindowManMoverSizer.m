@@ -100,7 +100,6 @@
   NiceCFRelease(size);
   
   CGRect windowRect = CGRectMake(windowOrigin.x, windowOrigin.y, windowSize.width, windowSize.height);
-  NSLog(@"%s currentlyFocusedWindow rect: %@", _cmd, NSStringFromRect(NSRectFromCGRect(windowRect)));
   
   return windowRect;
   

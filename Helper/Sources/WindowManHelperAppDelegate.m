@@ -110,7 +110,6 @@
   NSUInteger actionIndex = [WindowManHotkeyPreferences() indexOfObject:prefKey];
   [self unregisterGlobalHotkeyAtActionIndex:actionIndex];
   [self registerGlobalHotkey:[self hotkeyForPreference:prefKey] forActionAtIndex:actionIndex];
-  NSLog(@"%s changed pref: %@ (action %d)", _cmd, prefKey, actionIndex);
 }
 
 OSStatus HotkeyHandler(EventHandlerCallRef nextHandler, EventRef event, void *userData)
