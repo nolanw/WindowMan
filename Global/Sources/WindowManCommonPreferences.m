@@ -39,7 +39,7 @@ const NSString * WindowManLocalizedPreferenceDescriptionTable = @"WindowManPrefe
 {
   return CFPreferencesSynchronize(WindowManPreferencesIdentifier
     , kCFPreferencesCurrentUser
-    , kCFPreferencesCurrentHost
+    , kCFPreferencesAnyHost
     ) ? YES : NO;
 }
 
