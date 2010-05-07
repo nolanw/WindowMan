@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D202CEA0486D31800D8A456 /* WindowMan_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA20370C41700C91783 /* WindowMan_Prefix.pch */; };
 		8D202CEB0486D31800D8A456 /* WindowManPref.h in Headers */ = {isa = PBXBuildFile; fileRef = F506C03C013D9D7901CA16C8 /* WindowManPref.h */; };
 		8D202CED0486D31800D8A456 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D202CEE0486D31800D8A456 /* WindowManPref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = F506C040013D9D8001CA16C8 /* WindowManPref.tiff */; };
@@ -15,6 +14,7 @@
 		8D202CF10486D31800D8A456 /* WindowManPref.m in Sources */ = {isa = PBXBuildFile; fileRef = F506C03D013D9D7901CA16C8 /* WindowManPref.m */; };
 		8D202CF30486D31800D8A456 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
+		F23412B31193E145000532AE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		F28E50FE11911F9E00880FFF /* WindowManCommonPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E50FC11911F9E00880FFF /* WindowManCommonPreferences.h */; };
 		F28E50FF11911F9E00880FFF /* WindowManCommonPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E50FD11911F9E00880FFF /* WindowManCommonPreferences.m */; };
 		F28E5113119123A000880FFF /* WindowManHotkeyPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E5111119123A000880FFF /* WindowManHotkeyPreferences.h */; };
@@ -38,6 +38,14 @@
 		F28E53B11193CF5800880FFF /* WindowManBundleIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E53AF1193CF5800880FFF /* WindowManBundleIdentifiers.m */; };
 		F28E53BD1193D11D00880FFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E53BC1193D11D00880FFF /* main.m */; };
 		F28E53C01193D13000880FFF /* WindowManHelperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E53BF1193D13000880FFF /* WindowManHelperAppDelegate.m */; };
+		F28E53E21193DDBE00880FFF /* WindowMan_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA20370C41700C91783 /* WindowMan_Prefix.pch */; };
+		F28E53E31193DDC900880FFF /* WindowManCommonPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E50FD11911F9E00880FFF /* WindowManCommonPreferences.m */; };
+		F28E53E41193DDCD00880FFF /* WindowManHotkeyPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E5112119123A000880FFF /* WindowManHotkeyPreferences.m */; };
+		F28E53E51193DDD600880FFF /* WindowManNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E535B11937F6A00880FFF /* WindowManNotifications.m */; };
+		F28E53E61193DDD600880FFF /* NWHotkeyBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E51281191282E00880FFF /* NWHotkeyBox.m */; };
+		F28E53E71193DDD600880FFF /* NWHotkeyStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E512A1191282E00880FFF /* NWHotkeyStringTransformer.m */; };
+		F28E53E81193DDD600880FFF /* WindowManBundleIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E53AF1193CF5800880FFF /* WindowManBundleIdentifiers.m */; };
+		F28E53F31193DE4F00880FFF /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28E51391191299200880FFF /* Carbon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +53,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F28E539B1193CEEF00880FFF /* WindowManHelper */;
+			remoteGlobalIDString = F28E539B1193CEEF00880FFF;
 			remoteInfo = WindowManHelper;
 		};
 /* End PBXContainerItemProxy section */
@@ -105,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F23412B31193E145000532AE /* Cocoa.framework in Frameworks */,
+				F28E53F31193DE4F00880FFF /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +276,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D202CEA0486D31800D8A456 /* WindowMan_Prefix.pch in Headers */,
 				8D202CEB0486D31800D8A456 /* WindowManPref.h in Headers */,
 				F28E50FE11911F9E00880FFF /* WindowManCommonPreferences.h in Headers */,
 				F28E5113119123A000880FFF /* WindowManHotkeyPreferences.h in Headers */,
@@ -277,6 +286,7 @@
 				F28E51651191659300880FFF /* WindowManHotkeyCell.h in Headers */,
 				F28E535C11937F6A00880FFF /* WindowManNotifications.h in Headers */,
 				F28E53B01193CF5800880FFF /* WindowManBundleIdentifiers.h in Headers */,
+				F28E53E21193DDBE00880FFF /* WindowMan_Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +405,12 @@
 			files = (
 				F28E53BD1193D11D00880FFF /* main.m in Sources */,
 				F28E53C01193D13000880FFF /* WindowManHelperAppDelegate.m in Sources */,
+				F28E53E31193DDC900880FFF /* WindowManCommonPreferences.m in Sources */,
+				F28E53E41193DDCD00880FFF /* WindowManHotkeyPreferences.m in Sources */,
+				F28E53E51193DDD600880FFF /* WindowManNotifications.m in Sources */,
+				F28E53E61193DDD600880FFF /* NWHotkeyBox.m in Sources */,
+				F28E53E71193DDD600880FFF /* NWHotkeyStringTransformer.m in Sources */,
+				F28E53E81193DDD600880FFF /* WindowManBundleIdentifiers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,7 +524,6 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = Helper/Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -531,7 +546,6 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = Helper/Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
