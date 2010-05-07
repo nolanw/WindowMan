@@ -156,7 +156,7 @@ static NSNumber * BoxInt(NSInteger anInteger)
   static NSArray *numpadKeyCodes = nil;
   if (numpadKeyCodes == nil)
   {
-    numpadKeyCodes = [NSArray arrayWithObjects:
+    numpadKeyCodes = [[NSArray alloc] initWithObjects:
         BoxInt(kVK_ANSI_KeypadDecimal)
       , BoxInt(NWHotkeyControlNumpadCommaKeyCode)
       , BoxInt(kVK_ANSI_KeypadMultiply)
