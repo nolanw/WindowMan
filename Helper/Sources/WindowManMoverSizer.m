@@ -168,7 +168,7 @@
 + (CGRect)visibleScreenFrameForWindow:(AXUIElementRef)window
 {
   CGRect visibleFrame = NSRectToCGRect([[NSScreen mainScreen] visibleFrame]);
-  visibleFrame.origin.y += GetMBarHeight();
+  visibleFrame.origin.y += [[NSStatusBar systemStatusBar] thickness];
   return visibleFrame;
 }
 
