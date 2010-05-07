@@ -1,3 +1,12 @@
+//
+//  WindowManCommonPreferences.m
+//  WindowMan
+//
+//  Created by Nolan Waite on 10-05-04.
+//  Copyright 2010 Nolan Waite. All rights reserved.
+//
+
+
 #import <CoreFoundation/CoreFoundation.h>
 #import "WindowManCommonPreferences.h"
 

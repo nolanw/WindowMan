@@ -1,3 +1,12 @@
+//
+//  WindowManCommonPreferences.h
+//  WindowMan
+//
+//  Created by Nolan Waite on 10-05-04.
+//  Copyright 2010 Nolan Waite. All rights reserved.
+//
+
+
 // Common methods to get and set preferences and to get localized descriptive names 
 // of preferences from any WindowMan bundle.
 @interface WindowManCommonPreferences : NSObject
