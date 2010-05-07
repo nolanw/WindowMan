@@ -73,6 +73,7 @@ NSUInteger SRCocoaToCarbonFlags(NSUInteger cocoaFlags)
   {
     keyCode = aKeyCode;
     modifierFlags = someModifierFlags;
+    characterIgnoringModifiers = [@"" retain];
   }
   
   return self;
@@ -81,6 +82,13 @@ NSUInteger SRCocoaToCarbonFlags(NSUInteger cocoaFlags)
 - (id)initWithKeyCode:(NSInteger)aKeyCode carbonModifierFlags:(NSUInteger)someCarbonModifierFlags
 {
   return [self initWithKeyCode:aKeyCode modifierFlags:SRCarbonToCocoaFlags(someCarbonModifierFlags)];
+}
+
+- (void)dealloc
+{
+  [characterIgnoringModifiers release];
+  
+  [super dealloc];
 }
 
 + (id)hotkeyBoxWithPreferencesRepresentation:(NSDictionary *)preferencesRepresentation
@@ -94,7 +102,7 @@ NSUInteger SRCocoaToCarbonFlags(NSUInteger cocoaFlags)
   
   hotkeyBox.keyCode = [[preferencesRepresentation valueForKey:NWHotkeyBoxPreferencesKeyCodeKey] integerValue];
   hotkeyBox.modifierFlags = [[preferencesRepresentation valueForKey:NWHotkeyBoxPreferencesModifierFlagsKey] integerValue];
-  hotkeyBox.characterIgnoringModifiers = [[preferencesRepresentation valueForKey:NWHotkeyBoxPreferencesCharacterIgnoringModifiersKey] stringValue];
+  hotkeyBox.characterIgnoringModifiers = [preferencesRepresentation valueForKey:NWHotkeyBoxPreferencesCharacterIgnoringModifiersKey];
   return hotkeyBox;
 }
 
@@ -103,18 +111,13 @@ NSUInteger SRCocoaToCarbonFlags(NSUInteger cocoaFlags)
   return [[[self alloc] initWithKeyCode:NWHotkeyBoxEmpty modifierFlags:0] autorelease];
 }
 
-static id NilToNull(id couldBeNil)
-{
-  return couldBeNil == nil ? [NSNull null] : nil;
-}
-
 // Provides a representation suitable for storing in preferences.
 - (NSDictionary *)preferencesRepresentation
 {
   return [NSDictionary dictionaryWithObjectsAndKeys:
       [NSNumber numberWithInteger:self.keyCode], NWHotkeyBoxPreferencesKeyCodeKey
     , [NSNumber numberWithInteger:self.modifierFlags], NWHotkeyBoxPreferencesModifierFlagsKey
-    , NilToNull(self.characterIgnoringModifiers), NWHotkeyBoxPreferencesCharacterIgnoringModifiersKey
+    , self.characterIgnoringModifiers, NWHotkeyBoxPreferencesCharacterIgnoringModifiersKey
     , nil];
 }
 
