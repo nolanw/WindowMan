@@ -102,21 +102,29 @@ static inline NSUInteger ScrubModifierFlags(NSUInteger modifierFlags)
 
 // NSResponder
 
-// Forward any modifier+key combinations to -performKeyEquivalent:; otherwise, 
-// update display with current modifier keys. This is needed to handle what would 
-// otherwise be accented characters (e.g. option-e), and has the handy side effect 
-// of preventing any characters from appearing in the text view like in normal 
+// Forward any modifier+key combinations to -performKeyEquivalent:. Otherwise, if 
+// escape was pressed, cancel editing. If either delete was pressed, clear the hotkey. 
+// This is implemented because some events such as accented characters (e.g. option-e)
+// aren't key equivalents, but we want to capture them. This has the handy side effect 
+// of preventing characters from appearing while typing in the text view like in normal 
 // editing.
 - (void)keyDown:(NSEvent *)event
 {
   NSUInteger modifierFlags = ScrubModifierFlags([event modifierFlags]);
-  if ([[event charactersIgnoringModifiers] length] > 0 && modifierFlags)
+  NSString *charactersIgnoringModifiers = [event charactersIgnoringModifiers];
+  if ([charactersIgnoringModifiers length] > 0 && modifierFlags)
   {
     [self performKeyEquivalent:event];
   }
-  else
+  else if ([event keyCode] == kVK_Escape)
   {
-    [self setStringValue:[NWHotkeyStringTransformer stringWithModifierFlags:modifierFlags]];
+    self.hotkey = nil;
+    [self endEditing];
+  }
+  else if ([event keyCode] == kVK_Delete || [event keyCode] == kVK_ForwardDelete)
+  {
+    self.hotkey = [NWHotkeyBox emptyHotkeyBox];
+    [self endEditing];
   }
 }
 
