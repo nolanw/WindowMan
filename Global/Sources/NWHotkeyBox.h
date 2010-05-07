@@ -46,6 +46,9 @@ extern NSUInteger SRCocoaToCarbonFlags(NSUInteger cocoaFlags);
 // If |preferencesRepresentation| is nil, returns an empty HotkeyBox.
 + (id)hotkeyBoxWithPreferencesRepresentation:(NSDictionary *)preferencesRepresentation;
 
+// Returns an empty autoreleased instance of HotkeyBox.
++ (id)emptyHotkeyBox;
+
 // Provides a representation suitable for storing in preferences.
 - (NSDictionary *)preferencesRepresentation;
 

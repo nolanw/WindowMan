@@ -98,6 +98,11 @@ NSUInteger SRCocoaToCarbonFlags(NSUInteger cocoaFlags)
   return hotkeyBox;
 }
 
++ (id)emptyHotkeyBox
+{
+  return [[[self alloc] initWithKeyCode:NWHotkeyBoxEmpty modifierFlags:0] autorelease];
+}
+
 static id NilToNull(id couldBeNil)
 {
   return couldBeNil == nil ? [NSNull null] : nil;
