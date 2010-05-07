@@ -12,3 +12,6 @@ extern const NSString * WindowManHotkeyPreferencesDidChangeNotification;
 
 // userInfo key for PreferencesDidChangeNotification for new hotkey preference.
 extern const NSString * WindowManChangedPreferenceKey;
+
+// The Helper app listens for this notification and terminates when notified.
+extern const NSString * WindowManTerminateHelperAppNotification;

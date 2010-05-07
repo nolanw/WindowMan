@@ -10,3 +10,5 @@
 
 const NSString * WindowManHotkeyPreferencesDidChangeNotification = @"WindowManHotkeyPreferencesDidChangeNotification";
 const NSString * WindowManChangedPreferenceKey = @"WindowManChangedPreferenceKey";
+
+const NSString * WindowManTerminateHelperAppNotification = @"WindowManTerminateHelperAppNotification";
