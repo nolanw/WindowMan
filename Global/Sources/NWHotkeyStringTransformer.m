@@ -79,7 +79,7 @@ NSBundle * NWHotkeyControlBundle()
   NWHotkeyBox *hotkey = (NWHotkeyBox *)value;
   
   NSString *flagsString = [[self class] stringWithModifierFlags:hotkey.modifierFlags];
-  NSString *keyCodeString = (hotkey.characterIgnoringModifiers ? [hotkey.characterIgnoringModifiers uppercaseString] : [[self class] stringWithKeyCode:hotkey.keyCode]);
+  NSString *keyCodeString = (([hotkey.characterIgnoringModifiers length] > 0) ? [hotkey.characterIgnoringModifiers uppercaseString] : [[self class] stringWithKeyCode:hotkey.keyCode]);
   
   return [NSString stringWithFormat:@"%@%@", flagsString, keyCodeString];
 }
