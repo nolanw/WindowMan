@@ -14,11 +14,14 @@
   NSMutableArray *hotkeys;
   NSTableView *hotkeyTable;
   NSButton *helperStartOnLoginCheckBox;
+  NSButton *helperIsRunningCheckBox;
 }
 
 @property (nonatomic, retain) IBOutlet NSTableView *hotkeyTable;
 @property (nonatomic, retain) IBOutlet NSButton *helperStartOnLoginCheckBox;
+@property (nonatomic, retain) IBOutlet NSButton *helperIsRunningCheckBox;
 
 - (IBAction)toggleStartWindowManHelperOnLogin:(id)sender;
+- (IBAction)toggleHelperAppRunning:(id)sender;
 
 @end

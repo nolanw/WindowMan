@@ -23,6 +23,7 @@
 
 @synthesize hotkeyTable;
 @synthesize helperStartOnLoginCheckBox;
+@synthesize helperIsRunningCheckBox;
 
 - (id)initWithBundle:(NSBundle *)bundle
 {
@@ -50,6 +51,7 @@
 - (void)willSelect
 {
   self.helperStartOnLoginCheckBox.state = [NWLoginItems isBundleAtPathInSessionLoginItems:[self pathForBundledApp:@"WindowManHelper.app"]] ? NSOnState : NSOffState;
+  self.helperIsRunningCheckBox.state = ([[NSRunningApplication runningApplicationsWithBundleIdentifier:(NSString *)WindowManHelperBundleIdentifier] count] > 0) ? NSOnState : NSOffState;
 }
 
 - (NSString *)pathForBundledApp:(NSString *)bundledApp
@@ -67,6 +69,19 @@
   else
   {
     [NWLoginItems removeBundleAtPathFromSessionLoginItems:helperPath];
+  }
+}
+
+- (IBAction)toggleHelperAppRunning:(id)sender
+{
+  if ([sender state] == NSOnState)
+  {
+    NSURL *helperURL = [NSURL fileURLWithPath:[self pathForBundledApp:@"WindowManHelper.app"]];
+    [[NSWorkspace sharedWorkspace] launchApplicationAtURL:helperURL options:NSWorkspaceLaunchWithoutActivation configuration:[NSDictionary dictionary] error:nil];
+  }
+  else
+  {
+    [[NSDistributedNotificationCenter defaultCenter] postNotificationName:(NSString *)WindowManTerminateHelperAppNotification object:nil];
   }
 }
 
