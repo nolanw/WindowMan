@@ -28,5 +28,6 @@
 - (IBAction)toggleStartWindowManHelperOnLogin:(id)sender;
 - (IBAction)toggleHelperAppRunning:(id)sender;
 - (IBAction)openUniversalAccessPrefpane:(id)sender;
+- (IBAction)editSelectedRowHotkeyInTable:(id)sender;
 
 @end

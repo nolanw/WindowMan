@@ -31,6 +31,7 @@ static NSString * WindowManAccessibilityEnabledTabViewItemID = @"AccessibilityEn
 static NSString * WindowManAccessibilityDisabledTabViewItemID = @"AccessibilityDisabled";
 static NSString * WindowManUniversalAccessPrefpanePath = @"/System/Library/PreferencePanes/UniversalAccessPref.prefPane";
 static NSString * WindowManHelperAppFilename = @"WindowManHelper.app";
+static NSString * WindowManPrefpaneHotkeyColumnID = @"hotkey";
 
 - (id)initWithBundle:(NSBundle *)bundle
 {
@@ -53,6 +54,11 @@ static NSString * WindowManHelperAppFilename = @"WindowManHelper.app";
   [hotkeys release];
   
   [super dealloc];
+}
+
+- (void)mainViewDidLoad
+{
+  [self.hotkeyTable setDoubleAction:@selector(editSelectedRowHotkeyInTable:)];
 }
 
 - (void)willSelect
@@ -106,6 +112,16 @@ static NSString * WindowManHelperAppFilename = @"WindowManHelper.app";
 - (IBAction)openUniversalAccessPrefpane:(id)sender
 {
   [[NSWorkspace sharedWorkspace] openFile:WindowManUniversalAccessPrefpanePath withApplication:nil andDeactivate:NO];
+}
+
+- (IBAction)editSelectedRowHotkeyInTable:(NSTableView *)tableView
+{
+  NSUInteger clickedRow = [tableView clickedRow];
+  if (clickedRow == -1)
+  {
+    return;
+  }
+  [tableView editColumn:[tableView columnWithIdentifier:WindowManPrefpaneHotkeyColumnID] row:clickedRow withEvent:nil select:YES];
 }
 
 // NSTableViewDataSource
