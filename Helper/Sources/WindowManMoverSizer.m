@@ -31,6 +31,12 @@
 // Sets |window|'s origin and size to those of |rect|.
 + (void)setRect:(CGRect)rect forWindow:(AXUIElementRef)window;
 
+// Sets |window|'s origin to |origin|.
++ (void)setOrigin:(CGPoint)origin forWindow:(AXUIElementRef)window;
+
+// Sets |window|'s size to |size|.
++ (void)setSize:(CGSize)size forWindow:(AXUIElementRef)window;
+
 // Returns the visible frame of the screen where |window| is found.
 + (CGRect)visibleScreenFrameForWindow:(AXUIElementRef)window;
 
@@ -104,10 +110,16 @@
 
 + (void)setRect:(CGRect)rect forWindow:(AXUIElementRef)window
 {
+  [self setOrigin:rect.origin forWindow:window];
+  [self setSize:rect.size forWindow:window];
+}
+
+// Sets |window|'s origin to |origin|.
++ (void)setOrigin:(CGPoint)origin forWindow:(AXUIElementRef)window
+{
   AXError error;
   
-  CFTypeRef origin;
-  CFTypeRef size;
+  CFTypeRef originValue;
   CFTypeRef windowTitle;
   
   error = AXUIElementCopyAttributeValue(window, kAXTitleAttribute, &windowTitle);
@@ -166,35 +178,77 @@ static void HalfsiesCGRect(CGRect inRect, CGRect *outRects)
 }
 
 
+static void QuartersiesCGRect(CGRect inRect, CGRect *outRects)
+{
+  CGRect halfsies[2];
+  HalfsiesCGRect(inRect, halfsies);
+  CGRectDivide(halfsies[0], outRects, outRects + 3, (halfsies[0].size.height / 2.0), CGRectMinYEdge);
+  CGRectDivide(halfsies[1], outRects + 1, outRects + 2, (halfsies[1].size.height / 2.0), CGRectMinYEdge);
+}
+
 + (void)occupyTopLeftQuarter
 {
-  
+  AXUIElementRef window = [self currentlyFocusedWindow];
+  CGRect screenQuarters[4];
+  QuartersiesCGRect([self visibleScreenFrameForWindow:window], screenQuarters);
+  [self setRect:screenQuarters[0] forWindow:window];
+  NiceCFRelease(window);
 }
 
 + (void)occupyTopRightQuarter
 {
-  
+  AXUIElementRef window = [self currentlyFocusedWindow];
+  CGRect screenQuarters[4];
+  QuartersiesCGRect([self visibleScreenFrameForWindow:window], screenQuarters);
+  [self setRect:screenQuarters[1] forWindow:window];
+  NiceCFRelease(window);
 }
 
 + (void)occupyBottomRightQuarter
 {
-  
+  AXUIElementRef window = [self currentlyFocusedWindow];
+  CGRect screenQuarters[4];
+  QuartersiesCGRect([self visibleScreenFrameForWindow:window], screenQuarters);
+  [self setRect:screenQuarters[2] forWindow:window];
+  NiceCFRelease(window);
 }
 
 + (void)occupyBottomLeftQuarter
 {
-  
+  AXUIElementRef window = [self currentlyFocusedWindow];
+  CGRect screenQuarters[4];
+  QuartersiesCGRect([self visibleScreenFrameForWindow:window], screenQuarters);
+  [self setRect:screenQuarters[3] forWindow:window];
+  NiceCFRelease(window);
 }
 
 
-+ (void)occupyCenter
++ (void)centerHorizontally
 {
-  
+  AXUIElementRef window = [self currentlyFocusedWindow];
+  CGRect windowRect = [self rectForWindow:window];
+  CGRect screenRect = [self visibleScreenFrameForWindow:window];
+  windowRect.origin.x = screenRect.origin.x + (screenRect.size.width / 2.0) - (windowRect.size.width / 2.0);
+  [self setOrigin:windowRect.origin forWindow:window];
+  NiceCFRelease(window);
+}
+
++ (void)centerAbsolutely
+{
+  AXUIElementRef window = [self currentlyFocusedWindow];
+  CGRect windowRect = [self rectForWindow:window];
+  CGRect screenRect = [self visibleScreenFrameForWindow:window];
+  windowRect.origin.x = screenRect.origin.x + (screenRect.size.width / 2.0) - (windowRect.size.width / 2.0);
+  windowRect.origin.y = screenRect.origin.y + (screenRect.size.height / 2.0) - (windowRect.size.height / 2.0);
+  [self setOrigin:windowRect.origin forWindow:window];
+  NiceCFRelease(window);
 }
 
 + (void)occupyEntireScreen
 {
-  
+  AXUIElementRef window = [self currentlyFocusedWindow];
+  [self setRect:[self visibleScreenFrameForWindow:window] forWindow:window];
+  NiceCFRelease(window);
 }
 
 @end

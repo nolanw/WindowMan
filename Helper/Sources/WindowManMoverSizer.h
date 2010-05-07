@@ -28,7 +28,8 @@
 + (void)occupyBottomLeftQuarter;
 
 // This just moves the window.
-+ (void)occupyCenter;
++ (void)centerHorizontally;
++ (void)centerAbsolutely;
 
 // This both moves and resizes the window.
 + (void)occupyEntireScreen;

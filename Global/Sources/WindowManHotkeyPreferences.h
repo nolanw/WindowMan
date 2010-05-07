@@ -20,5 +20,8 @@ extern NSString * WindowManHotkeyPreferenceBottomRightQuarter;
 extern NSString * WindowManHotkeyPreferenceBottomLeftQuarter;
 
 // Moving, no resizing
-extern NSString * WindowManHotkeyPreferenceCenter;
+extern NSString * WindowManHotkeyPreferenceCenterHorizontally;
+extern NSString * WindowManHotkeyPreferenceCenterAbsolutely;
+
+// Move to top left and size to cover screen.
 extern NSString * WindowManHotkeyPreferenceMaximize;

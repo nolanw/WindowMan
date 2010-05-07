@@ -134,7 +134,8 @@ OSStatus HotkeyHandler(EventHandlerCallRef nextHandler, EventRef event, void *us
       , @"occupyTopRightQuarter"
       , @"occupyBottomRightQuarter"
       , @"occupyBottomLeftQuarter"
-      , @"occupyCenter"
+      , @"centerHorizontally"
+      , @"centerAbsolutely"
       , @"occupyEntireScreen"
       , nil]
       forKeys: WindowManHotkeyPreferences()];
