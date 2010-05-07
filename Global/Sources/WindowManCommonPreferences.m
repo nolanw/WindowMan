@@ -29,10 +29,7 @@ NSString * WindowManLocalizedPreferenceDescriptionTable = @"WindowManPreferences
 
 + (void)setValue:(id)value forKey:(NSString *)key
 {
-  // Why is it necessary to retain then release the key?
-  [key retain];
   CFPreferencesSetAppValue((CFStringRef)key, value, WindowManPreferencesIdentifier);
-  [key release];
 }
 
 + (BOOL)synchronize
