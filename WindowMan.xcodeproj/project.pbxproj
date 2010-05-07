@@ -15,6 +15,7 @@
 		8D202CF30486D31800D8A456 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
 		F23412B31193E145000532AE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		F23BFCAE11940C980005E64D /* WindowManMoverSizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F23BFCAD11940C980005E64D /* WindowManMoverSizer.m */; };
 		F28E50FE11911F9E00880FFF /* WindowManCommonPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E50FC11911F9E00880FFF /* WindowManCommonPreferences.h */; };
 		F28E50FF11911F9E00880FFF /* WindowManCommonPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E50FD11911F9E00880FFF /* WindowManCommonPreferences.m */; };
 		F28E5113119123A000880FFF /* WindowManHotkeyPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E5111119123A000880FFF /* WindowManHotkeyPreferences.h */; };
@@ -66,6 +67,8 @@
 		32DBCFA20370C41700C91783 /* WindowMan_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowMan_Prefix.pch; sourceTree = "<group>"; };
 		8D202CF70486D31800D8A456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D202CF80486D31800D8A456 /* WindowMan.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WindowMan.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		F23BFCAC11940C980005E64D /* WindowManMoverSizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManMoverSizer.h; sourceTree = "<group>"; };
+		F23BFCAD11940C980005E64D /* WindowManMoverSizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManMoverSizer.m; sourceTree = "<group>"; };
 		F28E50FC11911F9E00880FFF /* WindowManCommonPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManCommonPreferences.h; sourceTree = "<group>"; };
 		F28E50FD11911F9E00880FFF /* WindowManCommonPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManCommonPreferences.m; sourceTree = "<group>"; };
 		F28E5111119123A000880FFF /* WindowManHotkeyPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManHotkeyPreferences.h; sourceTree = "<group>"; };
@@ -265,6 +268,8 @@
 				F28E53BC1193D11D00880FFF /* main.m */,
 				F28E53BE1193D13000880FFF /* WindowManHelperAppDelegate.h */,
 				F28E53BF1193D13000880FFF /* WindowManHelperAppDelegate.m */,
+				F23BFCAC11940C980005E64D /* WindowManMoverSizer.h */,
+				F23BFCAD11940C980005E64D /* WindowManMoverSizer.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -411,6 +416,7 @@
 				F28E53E61193DDD600880FFF /* NWHotkeyBox.m in Sources */,
 				F28E53E71193DDD600880FFF /* NWHotkeyStringTransformer.m in Sources */,
 				F28E53E81193DDD600880FFF /* WindowManBundleIdentifiers.m in Sources */,
+				F23BFCAE11940C980005E64D /* WindowManMoverSizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
