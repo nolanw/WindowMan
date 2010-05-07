@@ -7,6 +7,8 @@
   #import <AppKit/AppKit.h>
   #import "WindowManCommonPreferences.h"
   #import "WindowManHotkeyPreferences.h"
+  #import "WindowManNotifications.h"
+  #import "WindowManBundleIdentifiers.h"
   #import "NWHotkeyBox.h"
   #import "NWHotkeyStringTransformer.h"
 #endif
