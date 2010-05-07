@@ -7,11 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Carbon/Carbon.h>
 
 
 @interface WindowManHelperAppDelegate : NSObject <NSApplicationDelegate>
 {
-
+  EventHotKeyRef *hotkeyRefs;
 }
 
 @end
