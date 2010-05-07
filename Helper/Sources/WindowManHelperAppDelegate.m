@@ -15,12 +15,17 @@
 // an empty boxed hotkey.
 - (NWHotkeyBox *)hotkeyForPreference:(NSString *)key;
 
-// Registers hotkey as a global hotkey, and returns a reference that can be used to unregister 
-// the hotkey in the future.
-- (EventHotKeyRef)registerGlobalHotkey:(NWHotkeyBox *)hotkey forActionAtIndex:(NSUInteger)actionIndex;
+// Registers hotkey as a global hotkey, storing a reference that can unregister the hotkey.
+- (void)registerGlobalHotkey:(NWHotkeyBox *)hotkey forActionAtIndex:(NSUInteger)actionIndex;
+
+// Unregisters the hotkey for action |actionIndex|, if one has been set.
+- (void)unregisterGlobalHotkeyAtActionIndex:(NSUInteger)actionIndex;
 
 // Perform the action indicated by the actionIndexth preference.
 - (void)performActionAtIndex:(NSUInteger)actionIndex;
+
+// Responds to change in hotkey preference.
+- (void)hotkeyPreferenceDidChange:(NSNotification *)note;
 
 @end
 
@@ -63,11 +68,12 @@
   }
 }
 
-- (EventHotKeyRef)registerGlobalHotkey:(NWHotkeyBox *)hotkey forActionAtIndex:(NSUInteger)actionIndex
+- (void)registerGlobalHotkey:(NWHotkeyBox *)hotkey forActionAtIndex:(NSUInteger)actionIndex
 {
   if (hotkey.keyCode == NWHotkeyBoxEmpty)
   {
-    return NULL;
+    [self unregisterGlobalHotkeyAtActionIndex:actionIndex];
+    return;
   }
   OSStatus error;
   EventHotKeyID hotkeyID;
@@ -80,7 +86,30 @@
   {
     hotkeyRef = NULL;
   }
-  return hotkeyRef;
+  hotkeyRefs[actionIndex] = hotkeyRef;
+}
+
+- (void)unregisterGlobalHotkeyAtActionIndex:(NSUInteger)actionIndex
+{
+  if (hotkeyRefs[actionIndex] != NULL)
+  {
+    UnregisterEventHotKey(hotkeyRefs[actionIndex]);
+    hotkeyRefs[actionIndex] = NULL;
+  }
+}
+
+- (void)hotkeyPreferenceDidChange:(NSNotification *)note
+{
+  NSString *prefKey = [[note userInfo] objectForKey:WindowManChangedPreferenceKey];
+  if (prefKey == nil)
+  {
+    return;
+  }
+  [WindowManCommonPreferences synchronize];
+  NSUInteger actionIndex = [WindowManHotkeyPreferences() indexOfObject:prefKey];
+  [self unregisterGlobalHotkeyAtActionIndex:actionIndex];
+  [self registerGlobalHotkey:[self hotkeyForPreference:prefKey] forActionAtIndex:actionIndex];
+  NSLog(@"%s changed pref: %@ (action %d)", _cmd, prefKey, actionIndex);
 }
 
 OSStatus HotkeyHandler(EventHandlerCallRef nextHandler, EventRef event, void *userData)
@@ -112,8 +141,10 @@ OSStatus HotkeyHandler(EventHandlerCallRef nextHandler, EventRef event, void *us
   for (NSUInteger prefIndex = 0; prefIndex < [WindowManHotkeyPreferences() count]; prefIndex += 1)
   {
     hotkey = [self hotkeyForPreference:[WindowManHotkeyPreferences() objectAtIndex:prefIndex]];
-    hotkeyRefs[prefIndex] = [self registerGlobalHotkey:hotkey forActionAtIndex:prefIndex];
+    [self registerGlobalHotkey:hotkey forActionAtIndex:prefIndex];
   }
+  
+  [noteCenter addObserver:self selector:@selector(hotkeyPreferenceDidChange:) name:WindowManHotkeyPreferencesDidChangeNotification object:nil];
 }
 
 @end
