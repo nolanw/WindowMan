@@ -127,29 +127,49 @@
     windowTitle = CFSTR("");
   }
   
-  origin = AXValueCreate(kAXValueCGPointType, &(rect.origin));
-  size = AXValueCreate(kAXValueCGSizeType, &(rect.size));
+  originValue = AXValueCreate(kAXValueCGPointType, &origin);
   
-  error = AXUIElementSetAttributeValue(window, (CFStringRef)NSAccessibilityPositionAttribute, origin);
+  error = AXUIElementSetAttributeValue(window, (CFStringRef)NSAccessibilityPositionAttribute, originValue);
   if (error != kAXErrorSuccess)
   {
     NSLog(@"%s error setting position for window %@", _cmd, windowTitle);
   }
   
-  error = AXUIElementSetAttributeValue(window, (CFStringRef)NSAccessibilitySizeAttribute, size);
+  NiceCFRelease(windowTitle);
+  NiceCFRelease(originValue);
+}
+
+// Sets |window|'s size to |size|.
++ (void)setSize:(CGSize)size forWindow:(AXUIElementRef)window
+{
+  AXError error;
+  
+  CFTypeRef sizeValue;
+  CFTypeRef windowTitle;
+  
+  error = AXUIElementCopyAttributeValue(window, kAXTitleAttribute, &windowTitle);
+  if (error != kAXErrorSuccess || AXValueGetType(windowTitle) != CFStringGetTypeID())
+  {
+    windowTitle = CFSTR("");
+  }
+  
+  sizeValue = AXValueCreate(kAXValueCGSizeType, &size);
+  
+  error = AXUIElementSetAttributeValue(window, (CFStringRef)NSAccessibilitySizeAttribute, sizeValue);
   if (error != kAXErrorSuccess)
   {
     NSLog(@"%s error setting size for window %@", _cmd, windowTitle);
   }
   
   NiceCFRelease(windowTitle);
-  NiceCFRelease(size);
-  NiceCFRelease(origin);
+  NiceCFRelease(sizeValue);
 }
 
 + (CGRect)visibleScreenFrameForWindow:(AXUIElementRef)window
 {
-  return NSRectToCGRect([[NSScreen mainScreen] visibleFrame]);
+  CGRect visibleFrame = NSRectToCGRect([[NSScreen mainScreen] visibleFrame]);
+  visibleFrame.origin.y += GetMBarHeight();
+  return visibleFrame;
 }
 
 static void HalfsiesCGRect(CGRect inRect, CGRect *outRects)
