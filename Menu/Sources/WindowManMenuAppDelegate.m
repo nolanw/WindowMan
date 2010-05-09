@@ -97,6 +97,7 @@
 
 - (void)hotkeyPreferenceDidChange:(NSNotification *)note
 {
+  [WindowManCommonPreferences synchronize];
   [self updateHotkeyForPreferenceKey:[[note userInfo] objectForKey:WindowManChangedPreferenceKey]];
 }
 
