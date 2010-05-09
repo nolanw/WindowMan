@@ -101,7 +101,7 @@
 
 - (void)hotkeyPreferenceDidChange:(NSNotification *)note
 {
-  NSString *prefKey = [[note userInfo] objectForKey:WindowManChangedPreferenceKey];
+  NSString *prefKey = [[note userInfo] objectForKey:WindowManUserInfoPreferenceKey];
   if (prefKey == nil)
   {
     return;

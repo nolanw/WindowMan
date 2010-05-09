@@ -10,8 +10,8 @@
 // where the new hotkey is stored.
 extern NSString * WindowManHotkeyPreferencesDidChangeNotification;
 
-// userInfo key for PreferencesDidChangeNotification for new hotkey preference.
-extern NSString * WindowManChangedPreferenceKey;
+// userInfo key for a hotkey preference.
+extern NSString * WindowManUserInfoPreferenceKey;
 
 // The Helper app listens for this notification and terminates when notified.
 extern NSString * WindowManTerminateHelperAppNotification;

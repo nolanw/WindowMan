@@ -204,7 +204,7 @@ static NSString * WindowManPrefpaneHotkeyColumnID = @"hotkey";
   [WindowManCommonPreferences synchronize];
   
   // Notify other WindowMan apps about changed preference.
-  NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:prefKey, WindowManChangedPreferenceKey, nil];
+  NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:prefKey, WindowManUserInfoPreferenceKey, nil];
   NSDistributedNotificationCenter *noteCenter = [NSDistributedNotificationCenter defaultCenter];
   [noteCenter postNotificationName:WindowManHotkeyPreferencesDidChangeNotification object:nil userInfo:userInfo];
 }

@@ -9,7 +9,7 @@
 #import "WindowManNotifications.h"
 
 NSString * WindowManHotkeyPreferencesDidChangeNotification = @"WindowManHotkeyPreferencesDidChangeNotification";
-NSString * WindowManChangedPreferenceKey = @"WindowManChangedPreferenceKey";
+NSString * WindowManUserInfoPreferenceKey = @"WindowManUserInfoPreferenceKey";
 
 NSString * WindowManTerminateHelperAppNotification = @"WindowManTerminateHelperAppNotification";
 NSString * WindowManTerminateMenuAppNotification = @"WindowManTerminateMenuAppNotification";
