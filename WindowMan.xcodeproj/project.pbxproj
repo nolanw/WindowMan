@@ -162,9 +162,9 @@
 		089C166AFE841209C02AAC07 /* WindowMan */ = {
 			isa = PBXGroup;
 			children = (
+				F28E52D11193617C00880FFF /* Global */,
 				F28AC81F1196433F001780DB /* Menu */,
 				F28E53B41193CFB500880FFF /* Helper */,
-				F28E52D11193617C00880FFF /* Global */,
 				F28E51071191205200880FFF /* Prefpane */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
