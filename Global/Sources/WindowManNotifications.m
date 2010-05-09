@@ -12,3 +12,4 @@ NSString * WindowManHotkeyPreferencesDidChangeNotification = @"WindowManHotkeyPr
 NSString * WindowManChangedPreferenceKey = @"WindowManChangedPreferenceKey";
 
 NSString * WindowManTerminateHelperAppNotification = @"WindowManTerminateHelperAppNotification";
+NSString * WindowManTerminateMenuAppNotification = @"WindowManTerminateMenuAppNotification";

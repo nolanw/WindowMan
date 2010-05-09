@@ -15,3 +15,6 @@ extern NSString * WindowManChangedPreferenceKey;
 
 // The Helper app listens for this notification and terminates when notified.
 extern NSString * WindowManTerminateHelperAppNotification;
+
+// The Menu app listens for this notification and terminates when notified.
+extern NSString * WindowManTerminateMenuAppNotification;
