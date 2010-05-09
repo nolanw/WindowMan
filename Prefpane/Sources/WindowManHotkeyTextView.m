@@ -95,7 +95,7 @@ static inline NSUInteger ScrubModifierFlags(NSUInteger modifierFlags)
   if (self.requireAtLeastTwoModifiers)
   {
     BOOL success = NO;
-    for (NSUInteger modifierPairsIndex = 0; modifierPairsIndex < 6; modifierPairsIndex--)
+    for (NSUInteger modifierPairsIndex = 0; modifierPairsIndex < 6; modifierPairsIndex++)
     {
       if ((modifierFlags & ModifierPairs[modifierPairsIndex]) == ModifierPairs[modifierPairsIndex])
       {
