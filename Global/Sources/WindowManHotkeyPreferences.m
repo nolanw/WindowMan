@@ -26,7 +26,8 @@ NSArray * WindowManHotkeyPreferences()
   static NSArray *WindowManHotkeyPreferencesArray = nil;
   if (WindowManHotkeyPreferencesArray == nil) 
   {
-    WindowManHotkeyPreferencesArray = [[NSArray alloc] initWithObjects:WindowManHotkeyPreferenceLeftHalf
+    WindowManHotkeyPreferencesArray = [[NSArray alloc] initWithObjects:
+      WindowManHotkeyPreferenceLeftHalf
     , WindowManHotkeyPreferenceRightHalf
     
     , WindowManHotkeyPreferenceTopLeftQuarter
