@@ -16,7 +16,6 @@
 		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
 		F23412B31193E145000532AE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		F23BFCAE11940C980005E64D /* WindowManMoverSizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F23BFCAD11940C980005E64D /* WindowManMoverSizer.m */; };
-		F28AC8291196439B001780DB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F28AC81A11964323001780DB /* Info.plist */; };
 		F28AC830119643B6001780DB /* WindowManMenu.app in Resources */ = {isa = PBXBuildFile; fileRef = F28AC81811964323001780DB /* WindowManMenu.app */; };
 		F28AC831119643BE001780DB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		F28AC832119643C2001780DB /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28E51391191299200880FFF /* Carbon.framework */; };
@@ -29,6 +28,7 @@
 		F28AC84311964478001780DB /* NWHotkeyBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E51281191282E00880FFF /* NWHotkeyBox.m */; };
 		F28AC84411964478001780DB /* NWHotkeyStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E512A1191282E00880FFF /* NWHotkeyStringTransformer.m */; };
 		F28AC84511964478001780DB /* WindowManBundleIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E53AF1193CF5800880FFF /* WindowManBundleIdentifiers.m */; };
+		F28AC85111964801001780DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28AC85011964801001780DB /* main.m */; };
 		F28E50FE11911F9E00880FFF /* WindowManCommonPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E50FC11911F9E00880FFF /* WindowManCommonPreferences.h */; };
 		F28E50FF11911F9E00880FFF /* WindowManCommonPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E50FD11911F9E00880FFF /* WindowManCommonPreferences.m */; };
 		F28E5113119123A000880FFF /* WindowManHotkeyPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E5111119123A000880FFF /* WindowManHotkeyPreferences.h */; };
@@ -94,6 +94,7 @@
 		F28AC83511964414001780DB /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		F28AC83C11964448001780DB /* WindowManMenuAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManMenuAppDelegate.h; sourceTree = "<group>"; };
 		F28AC83D11964448001780DB /* WindowManMenuAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManMenuAppDelegate.m; sourceTree = "<group>"; };
+		F28AC85011964801001780DB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F28E50FC11911F9E00880FFF /* WindowManCommonPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManCommonPreferences.h; sourceTree = "<group>"; };
 		F28E50FD11911F9E00880FFF /* WindowManCommonPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManCommonPreferences.m; sourceTree = "<group>"; };
 		F28E5111119123A000880FFF /* WindowManHotkeyPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManHotkeyPreferences.h; sourceTree = "<group>"; };
@@ -256,6 +257,7 @@
 		F28AC82111964359001780DB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F28AC85011964801001780DB /* main.m */,
 				F28AC83C11964448001780DB /* WindowManMenuAppDelegate.h */,
 				F28AC83D11964448001780DB /* WindowManMenuAppDelegate.m */,
 			);
@@ -454,7 +456,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F28AC8291196439B001780DB /* Info.plist in Resources */,
 				F28AC83811964418001780DB /* MainMenu.xib in Resources */,
 				F28AC83F1196445B001780DB /* WindowManPreferences.strings in Resources */,
 			);
@@ -508,6 +509,7 @@
 				F28AC84311964478001780DB /* NWHotkeyBox.m in Sources */,
 				F28AC84411964478001780DB /* NWHotkeyStringTransformer.m in Sources */,
 				F28AC84511964478001780DB /* WindowManBundleIdentifiers.m in Sources */,
+				F28AC85111964801001780DB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,7 +652,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Menu/Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -672,7 +674,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Menu/Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-framework",

@@ -9,8 +9,13 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface WindowManMenuAppDelegate : NSObject {
-
+@interface WindowManMenuAppDelegate : NSObject
+{
+  NSStatusItem *statusItem;
+  NSMenu *statusItemMenu;
 }
+@property (nonatomic, retain) IBOutlet NSMenu *statusItemMenu;
+
+- (IBAction)openWindowManPreferences:(id)sender;
 
 @end
