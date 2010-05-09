@@ -16,6 +16,9 @@
 // Returns the path of |bundledApp| relative to this bundle's Resources directory.
 - (NSString *)pathForBundledApp:(NSString *)bundledApp;
 
+// Sets |hotkey| to the value of the preference at |prefIndex|.
+- (void)setHotkey:(NWHotkeyBox *)hotkey forPreferenceAtIndex:(NSUInteger)prefIndex;
+
 @end
 
 
@@ -61,6 +64,7 @@ static NSString * WindowManPrefpaneHotkeyColumnID = @"hotkey";
 
 - (void)mainViewDidLoad
 {
+  [self.hotkeyTable setTarget:self];
   [self.hotkeyTable setDoubleAction:@selector(editSelectedRowHotkeyInTable:)];
 }
 
@@ -154,9 +158,25 @@ static NSString * WindowManPrefpaneHotkeyColumnID = @"hotkey";
   [tableView editColumn:[tableView columnWithIdentifier:WindowManPrefpaneHotkeyColumnID] row:clickedRow withEvent:nil select:YES];
 }
 
+- (void)setHotkey:(NWHotkeyBox *)hotkey forPreferenceAtIndex:(NSUInteger)prefIndex
+{
+  [hotkeys replaceObjectAtIndex:prefIndex withObject:hotkey];
+  
+  // Update preferences.
+  NSString *prefKey = [WindowManHotkeyPreferences() objectAtIndex:prefIndex];
+  NSDictionary *prefValue = [[hotkeys objectAtIndex:prefIndex] preferencesRepresentation];
+  [WindowManCommonPreferences setValue:prefValue forKey:prefKey];
+  [WindowManCommonPreferences synchronize];
+  
+  // Notify other WindowMan apps about changed preference.
+  NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:prefKey, WindowManUserInfoPreferenceKey, nil];
+  NSDistributedNotificationCenter *noteCenter = [NSDistributedNotificationCenter defaultCenter];
+  [noteCenter postNotificationName:WindowManHotkeyPreferencesDidChangeNotification object:nil userInfo:userInfo];
+}
+
 // NSTableViewDataSource
 
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
   return [hotkeys count];
 }
@@ -183,6 +203,18 @@ static NSString * WindowManPrefpaneHotkeyColumnID = @"hotkey";
   }
 }
 
+// DeleteKeyTableViewDelegate
+
+- (void)tableViewDidReceiveDelete:(NSTableView *)tableView
+{
+  if ([hotkeyTable selectedRow] == -1)
+  {
+    return;
+  }
+  [self setHotkey:[NWHotkeyBox emptyHotkeyBox] forPreferenceAtIndex:[hotkeyTable selectedRow]];
+  [tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:[hotkeyTable selectedRow]] columnIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)]];
+}
+
 // NSControlTextEditingDelegate
 
 - (void)controlTextDidEndEditing:(NSNotification *)note
@@ -195,18 +227,7 @@ static NSString * WindowManPrefpaneHotkeyColumnID = @"hotkey";
     // Not changing preferences (e.g. user canceled editing).
     return;
   }
-  [hotkeys replaceObjectAtIndex:prefIndex withObject:hotkey];
-  
-  // Update preferences.
-  NSString *prefKey = [WindowManHotkeyPreferences() objectAtIndex:prefIndex];
-  NSDictionary *prefValue = [[hotkeys objectAtIndex:prefIndex] preferencesRepresentation];
-  [WindowManCommonPreferences setValue:prefValue forKey:prefKey];
-  [WindowManCommonPreferences synchronize];
-  
-  // Notify other WindowMan apps about changed preference.
-  NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:prefKey, WindowManUserInfoPreferenceKey, nil];
-  NSDistributedNotificationCenter *noteCenter = [NSDistributedNotificationCenter defaultCenter];
-  [noteCenter postNotificationName:WindowManHotkeyPreferencesDidChangeNotification object:nil userInfo:userInfo];
+  [self setHotkey:hotkey forPreferenceAtIndex:prefIndex];
 }
 
 @end

@@ -61,6 +61,8 @@
 		F28E53E71193DDD600880FFF /* NWHotkeyStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E512A1191282E00880FFF /* NWHotkeyStringTransformer.m */; };
 		F28E53E81193DDD600880FFF /* WindowManBundleIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E53AF1193CF5800880FFF /* WindowManBundleIdentifiers.m */; };
 		F28E53F31193DE4F00880FFF /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28E51391191299200880FFF /* Carbon.framework */; };
+		F2A3E04C119774C700E20BEA /* DeleteKeyTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = F2A3E04A119774C700E20BEA /* DeleteKeyTableView.h */; };
+		F2A3E04D119774C700E20BEA /* DeleteKeyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A3E04B119774C700E20BEA /* DeleteKeyTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,8 @@
 		F28E53BC1193D11D00880FFF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F28E53BE1193D13000880FFF /* WindowManHelperAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManHelperAppDelegate.h; sourceTree = "<group>"; };
 		F28E53BF1193D13000880FFF /* WindowManHelperAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManHelperAppDelegate.m; sourceTree = "<group>"; };
+		F2A3E04A119774C700E20BEA /* DeleteKeyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteKeyTableView.h; sourceTree = "<group>"; };
+		F2A3E04B119774C700E20BEA /* DeleteKeyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteKeyTableView.m; sourceTree = "<group>"; };
 		F506C035013D953901CA16C8 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
 		F506C03C013D9D7901CA16C8 /* WindowManPref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManPref.h; sourceTree = "<group>"; };
 		F506C03D013D9D7901CA16C8 /* WindowManPref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManPref.m; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 				F28E515211915E8B00880FFF /* WindowManHotkeyTextView.m */,
 				F28E51631191659300880FFF /* WindowManHotkeyCell.h */,
 				F28E51641191659300880FFF /* WindowManHotkeyCell.m */,
+				F2A3E04A119774C700E20BEA /* DeleteKeyTableView.h */,
+				F2A3E04B119774C700E20BEA /* DeleteKeyTableView.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 				F28E535C11937F6A00880FFF /* WindowManNotifications.h in Headers */,
 				F28E53B01193CF5800880FFF /* WindowManBundleIdentifiers.h in Headers */,
 				F28E53E21193DDBE00880FFF /* WindowMan_Prefix.pch in Headers */,
+				F2A3E04C119774C700E20BEA /* DeleteKeyTableView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +506,7 @@
 				F28E51661191659300880FFF /* WindowManHotkeyCell.m in Sources */,
 				F28E535D11937F6A00880FFF /* WindowManNotifications.m in Sources */,
 				F28E53B11193CF5800880FFF /* WindowManBundleIdentifiers.m in Sources */,
+				F2A3E04D119774C700E20BEA /* DeleteKeyTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
