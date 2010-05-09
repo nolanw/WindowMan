@@ -25,6 +25,9 @@
 // Perform the action indicated by the actionIndexth preference.
 - (void)performActionAtIndex:(NSUInteger)actionIndex;
 
+// Perform the action for the preference in |note|'s userInfo.
+- (void)performActionWithNotification:(NSNotification *)note;
+
 // Responds to change in hotkey preference.
 - (void)hotkeyPreferenceDidChange:(NSNotification *)note;
 
@@ -120,10 +123,11 @@ OSStatus HotkeyHandler(EventHandlerCallRef nextHandler, EventRef event, void *us
   return noErr;
 }
 
-- (void)performActionAtIndex:(NSUInteger)actionIndex
+static NSDictionary *actionsByPref = nil;
+
+static void EnsureActionsByPref()
 {
   // Basic dispatch table.
-  static NSDictionary *actionsByPref = nil;
   if (actionsByPref == nil)
   {
     actionsByPref = [[NSDictionary alloc] initWithObjects:
@@ -139,7 +143,21 @@ OSStatus HotkeyHandler(EventHandlerCallRef nextHandler, EventRef event, void *us
       , nil]
       forKeys: WindowManHotkeyPreferences()];
   }
+}
+
+- (void)performActionAtIndex:(NSUInteger)actionIndex
+{
+  EnsureActionsByPref();
   SEL action = sel_registerName([[actionsByPref objectForKey:[WindowManHotkeyPreferences() objectAtIndex:actionIndex]] cStringUsingEncoding:NSASCIIStringEncoding]);
+  [WindowManMoverSizer performSelector:action];
+}
+
+- (void)performActionWithNotification:(NSNotification *)note
+{
+  NSLog(@"%s hello: %@", _cmd, note);
+  EnsureActionsByPref();
+  NSString *prefKey = [[note userInfo] objectForKey:WindowManUserInfoPreferenceKey];
+  SEL action = sel_registerName([[actionsByPref objectForKey:prefKey] cStringUsingEncoding:NSASCIIStringEncoding]);
   [WindowManMoverSizer performSelector:action];
 }
 
@@ -163,6 +181,7 @@ OSStatus HotkeyHandler(EventHandlerCallRef nextHandler, EventRef event, void *us
   }
   
   [noteCenter addObserver:self selector:@selector(hotkeyPreferenceDidChange:) name:WindowManHotkeyPreferencesDidChangeNotification object:nil];
+  [noteCenter addObserver:self selector:@selector(performActionWithNotification:) name:WindowManPerformActionNotification object:nil];
 }
 
 @end

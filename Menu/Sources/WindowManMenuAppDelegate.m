@@ -15,6 +15,9 @@
 // status item's menu; otherwise, does nothing.
 - (void)updateHotkeyForPreferenceKey:(NSString *)key;
 
+// Sent as menu action to perform the associated window action.
+- (IBAction)performWindowAction:(NSMenuItem *)sender;
+
 @end
 
 
@@ -42,6 +45,8 @@
   {
     menuItem = [[[NSMenuItem alloc] init] autorelease];
     [menuItem setTag:hotkeyPrefIndex];
+    [menuItem setTarget:self];
+    [menuItem setAction:@selector(performWindowAction:)];
     [statusItemMenu insertItem:menuItem atIndex:hotkeyPrefIndex];
     [self updateHotkeyForPreferenceKey:[hotkeyPrefs objectAtIndex:hotkeyPrefIndex]];
   }
@@ -93,6 +98,13 @@
   NSString *titleString = [NSString stringWithFormat:@"%@\t%@", [WindowManCommonPreferences localizedDescriptionWithPreference:key], [transformer transformedValue:[NWHotkeyBox hotkeyBoxWithPreferencesRepresentation:[WindowManCommonPreferences valueForKey:key]]]];
   NSAttributedString *title = [[[NSAttributedString alloc] initWithString:titleString attributes:attributes] autorelease];
   [menuItem setAttributedTitle:title];
+}
+
+- (IBAction)performWindowAction:(NSMenuItem *)sender
+{
+  NSLog(@"%s hello; sender: %@", _cmd, sender);
+  NSDictionary *userInfo = [NSDictionary dictionaryWithObject:[WindowManHotkeyPreferences() objectAtIndex:[sender tag]] forKey:WindowManUserInfoPreferenceKey];
+  [[NSDistributedNotificationCenter defaultCenter] postNotificationName:WindowManPerformActionNotification object:nil userInfo:userInfo];
 }
 
 - (void)hotkeyPreferenceDidChange:(NSNotification *)note
