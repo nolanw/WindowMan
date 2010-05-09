@@ -118,7 +118,7 @@ static inline NSUInteger ScrubModifierFlags(NSUInteger modifierFlags)
   }
   self.hotkey = [NWHotkeyBox hotkeyBoxWithKeyCode:[event keyCode] modifierFlags:modifierFlags];
   // Grab the unaccented character if one was given.
-  if ((modifierFlags & NSAlternateKeyMask) && ([event keyCode] < 0x5C))
+  if ((modifierFlags & NSAlternateKeyMask) && ([event keyCode] < 0x2F))
   {
     self.hotkey.characterIgnoringModifiers = [keyEquivalent substringToIndex:1];
   }
