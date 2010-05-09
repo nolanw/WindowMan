@@ -16,6 +16,19 @@
 		8D202CF40486D31800D8A456 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F506C035013D953901CA16C8 /* PreferencePanes.framework */; };
 		F23412B31193E145000532AE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		F23BFCAE11940C980005E64D /* WindowManMoverSizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F23BFCAD11940C980005E64D /* WindowManMoverSizer.m */; };
+		F28AC8291196439B001780DB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F28AC81A11964323001780DB /* Info.plist */; };
+		F28AC830119643B6001780DB /* WindowManMenu.app in Resources */ = {isa = PBXBuildFile; fileRef = F28AC81811964323001780DB /* WindowManMenu.app */; };
+		F28AC831119643BE001780DB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		F28AC832119643C2001780DB /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28E51391191299200880FFF /* Carbon.framework */; };
+		F28AC83811964418001780DB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F28AC83711964418001780DB /* MainMenu.xib */; };
+		F28AC83E11964448001780DB /* WindowManMenuAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28AC83D11964448001780DB /* WindowManMenuAppDelegate.m */; };
+		F28AC83F1196445B001780DB /* WindowManPreferences.strings in Resources */ = {isa = PBXBuildFile; fileRef = F28E52CF1193615800880FFF /* WindowManPreferences.strings */; };
+		F28AC84011964478001780DB /* WindowManCommonPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E50FD11911F9E00880FFF /* WindowManCommonPreferences.m */; };
+		F28AC84111964478001780DB /* WindowManHotkeyPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E5112119123A000880FFF /* WindowManHotkeyPreferences.m */; };
+		F28AC84211964478001780DB /* WindowManNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E535B11937F6A00880FFF /* WindowManNotifications.m */; };
+		F28AC84311964478001780DB /* NWHotkeyBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E51281191282E00880FFF /* NWHotkeyBox.m */; };
+		F28AC84411964478001780DB /* NWHotkeyStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E512A1191282E00880FFF /* NWHotkeyStringTransformer.m */; };
+		F28AC84511964478001780DB /* WindowManBundleIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E53AF1193CF5800880FFF /* WindowManBundleIdentifiers.m */; };
 		F28E50FE11911F9E00880FFF /* WindowManCommonPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E50FC11911F9E00880FFF /* WindowManCommonPreferences.h */; };
 		F28E50FF11911F9E00880FFF /* WindowManCommonPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E50FD11911F9E00880FFF /* WindowManCommonPreferences.m */; };
 		F28E5113119123A000880FFF /* WindowManHotkeyPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E5111119123A000880FFF /* WindowManHotkeyPreferences.h */; };
@@ -50,6 +63,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F28AC82A119643A4001780DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F28AC81711964323001780DB /* WindowManMenu */;
+			remoteInfo = WindowManMenu;
+		};
 		F28E53A21193CF0100880FFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
@@ -69,6 +89,11 @@
 		8D202CF80486D31800D8A456 /* WindowMan.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WindowMan.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23BFCAC11940C980005E64D /* WindowManMoverSizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManMoverSizer.h; sourceTree = "<group>"; };
 		F23BFCAD11940C980005E64D /* WindowManMoverSizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManMoverSizer.m; sourceTree = "<group>"; };
+		F28AC81811964323001780DB /* WindowManMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WindowManMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F28AC81A11964323001780DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F28AC83511964414001780DB /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F28AC83C11964448001780DB /* WindowManMenuAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManMenuAppDelegate.h; sourceTree = "<group>"; };
+		F28AC83D11964448001780DB /* WindowManMenuAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManMenuAppDelegate.m; sourceTree = "<group>"; };
 		F28E50FC11911F9E00880FFF /* WindowManCommonPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManCommonPreferences.h; sourceTree = "<group>"; };
 		F28E50FD11911F9E00880FFF /* WindowManCommonPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManCommonPreferences.m; sourceTree = "<group>"; };
 		F28E5111119123A000880FFF /* WindowManHotkeyPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManHotkeyPreferences.h; sourceTree = "<group>"; };
@@ -112,6 +137,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F28AC81611964323001780DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F28AC831119643BE001780DB /* Cocoa.framework in Frameworks */,
+				F28AC832119643C2001780DB /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F28E539A1193CEEF00880FFF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,6 +161,7 @@
 		089C166AFE841209C02AAC07 /* WindowMan */ = {
 			isa = PBXGroup;
 			children = (
+				F28AC81F1196433F001780DB /* Menu */,
 				F28E53B41193CFB500880FFF /* Helper */,
 				F28E52D11193617C00880FFF /* Global */,
 				F28E51071191205200880FFF /* Prefpane */,
@@ -156,7 +191,7 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+		08FB77AFFE84173DC02AAC07 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				F28E513F11912A6600880FFF /* NWLoginItems.h */,
@@ -168,7 +203,7 @@
 				F28E51631191659300880FFF /* WindowManHotkeyCell.h */,
 				F28E51641191659300880FFF /* WindowManHotkeyCell.m */,
 			);
-			path = Classes;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
@@ -195,8 +230,36 @@
 			children = (
 				8D202CF80486D31800D8A456 /* WindowMan.prefPane */,
 				F28E539C1193CEEF00880FFF /* WindowManHelper.app */,
+				F28AC81811964323001780DB /* WindowManMenu.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F28AC81F1196433F001780DB /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				F28AC82111964359001780DB /* Sources */,
+				F28AC8201196434D001780DB /* Resources */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		F28AC8201196434D001780DB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F28AC81A11964323001780DB /* Info.plist */,
+				F28AC83711964418001780DB /* MainMenu.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F28AC82111964359001780DB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F28AC83C11964448001780DB /* WindowManMenuAppDelegate.h */,
+				F28AC83D11964448001780DB /* WindowManMenuAppDelegate.m */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		F28E50F511911F7A00880FFF /* Sources */ = {
@@ -222,7 +285,7 @@
 		F28E51071191205200880FFF /* Prefpane */ = {
 			isa = PBXGroup;
 			children = (
-				08FB77AFFE84173DC02AAC07 /* Classes */,
+				08FB77AFFE84173DC02AAC07 /* Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
 			);
 			path = Prefpane;
@@ -312,12 +375,30 @@
 			);
 			dependencies = (
 				F28E53A31193CF0100880FFF /* PBXTargetDependency */,
+				F28AC82B119643A4001780DB /* PBXTargetDependency */,
 			);
 			name = WindowMan;
 			productInstallPath = "$(HOME)/Library/PreferencePanes";
 			productName = WindowMan;
 			productReference = 8D202CF80486D31800D8A456 /* WindowMan.prefPane */;
 			productType = "com.apple.product-type.bundle";
+		};
+		F28AC81711964323001780DB /* WindowManMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F28AC81D11964325001780DB /* Build configuration list for PBXNativeTarget "WindowManMenu" */;
+			buildPhases = (
+				F28AC81411964323001780DB /* Resources */,
+				F28AC81511964323001780DB /* Sources */,
+				F28AC81611964323001780DB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WindowManMenu;
+			productName = WindowManMenu;
+			productReference = F28AC81811964323001780DB /* WindowManMenu.app */;
+			productType = "com.apple.product-type.application";
 		};
 		F28E539B1193CEEF00880FFF /* WindowManHelper */ = {
 			isa = PBXNativeTarget;
@@ -350,6 +431,7 @@
 			targets = (
 				8D202CE80486D31800D8A456 /* WindowMan */,
 				F28E539B1193CEEF00880FFF /* WindowManHelper */,
+				F28AC81711964323001780DB /* WindowManMenu */,
 			);
 		};
 /* End PBXProject section */
@@ -364,6 +446,17 @@
 				8D202CEF0486D31800D8A456 /* WindowManPref.xib in Resources */,
 				F28E52D01193615800880FFF /* WindowManPreferences.strings in Resources */,
 				F28E53AA1193CF0B00880FFF /* WindowManHelper.app in Resources */,
+				F28AC830119643B6001780DB /* WindowManMenu.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F28AC81411964323001780DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F28AC8291196439B001780DB /* Info.plist in Resources */,
+				F28AC83811964418001780DB /* MainMenu.xib in Resources */,
+				F28AC83F1196445B001780DB /* WindowManPreferences.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +497,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F28AC81511964323001780DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F28AC83E11964448001780DB /* WindowManMenuAppDelegate.m in Sources */,
+				F28AC84011964478001780DB /* WindowManCommonPreferences.m in Sources */,
+				F28AC84111964478001780DB /* WindowManHotkeyPreferences.m in Sources */,
+				F28AC84211964478001780DB /* WindowManNotifications.m in Sources */,
+				F28AC84311964478001780DB /* NWHotkeyBox.m in Sources */,
+				F28AC84411964478001780DB /* NWHotkeyStringTransformer.m in Sources */,
+				F28AC84511964478001780DB /* WindowManBundleIdentifiers.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F28E53991193CEEF00880FFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,6 +530,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F28AC82B119643A4001780DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F28AC81711964323001780DB /* WindowManMenu */;
+			targetProxy = F28AC82A119643A4001780DB /* PBXContainerItemProxy */;
+		};
 		F28E53A31193CF0100880FFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F28E539B1193CEEF00880FFF /* WindowManHelper */;
@@ -437,6 +549,14 @@
 				089C167EFE841241C02AAC07 /* English */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F28AC83711964418001780DB /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F28AC83511964414001780DB /* English */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 		F28E52CF1193615800880FFF /* WindowManPreferences.strings */ = {
@@ -520,6 +640,52 @@
 			};
 			name = Release;
 		};
+		F28AC81B11964325001780DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = WindowManMenu;
+			};
+			name = Debug;
+		};
+		F28AC81C11964325001780DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = WindowManMenu;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		F28E539F1193CEF000880FFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -583,6 +749,15 @@
 			buildConfigurations = (
 				1DBD214D08BA80EA00186707 /* Debug */,
 				1DBD214E08BA80EA00186707 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F28AC81D11964325001780DB /* Build configuration list for PBXNativeTarget "WindowManMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F28AC81B11964325001780DB /* Debug */,
+				F28AC81C11964325001780DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
