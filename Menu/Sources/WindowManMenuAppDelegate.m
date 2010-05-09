@@ -42,7 +42,7 @@
   {
     menuItem = [[[NSMenuItem alloc] init] autorelease];
     [menuItem setTag:hotkeyPrefIndex];
-    [statusItemMenu insertItem:menuItem atIndex:0];
+    [statusItemMenu insertItem:menuItem atIndex:hotkeyPrefIndex];
     [self updateHotkeyForPreferenceKey:[hotkeyPrefs objectAtIndex:hotkeyPrefIndex]];
   }
 }
