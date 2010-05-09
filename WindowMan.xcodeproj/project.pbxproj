@@ -29,6 +29,7 @@
 		F28AC84411964478001780DB /* NWHotkeyStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E512A1191282E00880FFF /* NWHotkeyStringTransformer.m */; };
 		F28AC84511964478001780DB /* WindowManBundleIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E53AF1193CF5800880FFF /* WindowManBundleIdentifiers.m */; };
 		F28AC85111964801001780DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28AC85011964801001780DB /* main.m */; };
+		F28AC9291196922F001780DB /* UniversalAccessCheckbox.png in Resources */ = {isa = PBXBuildFile; fileRef = F28AC9281196922F001780DB /* UniversalAccessCheckbox.png */; };
 		F28E50FE11911F9E00880FFF /* WindowManCommonPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E50FC11911F9E00880FFF /* WindowManCommonPreferences.h */; };
 		F28E50FF11911F9E00880FFF /* WindowManCommonPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F28E50FD11911F9E00880FFF /* WindowManCommonPreferences.m */; };
 		F28E5113119123A000880FFF /* WindowManHotkeyPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = F28E5111119123A000880FFF /* WindowManHotkeyPreferences.h */; };
@@ -95,6 +96,7 @@
 		F28AC83C11964448001780DB /* WindowManMenuAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManMenuAppDelegate.h; sourceTree = "<group>"; };
 		F28AC83D11964448001780DB /* WindowManMenuAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManMenuAppDelegate.m; sourceTree = "<group>"; };
 		F28AC85011964801001780DB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F28AC9281196922F001780DB /* UniversalAccessCheckbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversalAccessCheckbox.png; sourceTree = "<group>"; };
 		F28E50FC11911F9E00880FFF /* WindowManCommonPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManCommonPreferences.h; sourceTree = "<group>"; };
 		F28E50FD11911F9E00880FFF /* WindowManCommonPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowManCommonPreferences.m; sourceTree = "<group>"; };
 		F28E5111119123A000880FFF /* WindowManHotkeyPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowManHotkeyPreferences.h; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				8D202CF70486D31800D8A456 /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 				F506C040013D9D8001CA16C8 /* WindowManPref.tiff */,
+				F28AC9281196922F001780DB /* UniversalAccessCheckbox.png */,
 				F506C042013D9D8C01CA16C8 /* WindowManPref.xib */,
 			);
 			path = Resources;
@@ -449,6 +452,7 @@
 				F28E52D01193615800880FFF /* WindowManPreferences.strings in Resources */,
 				F28E53AA1193CF0B00880FFF /* WindowManHelper.app in Resources */,
 				F28AC830119643B6001780DB /* WindowManMenu.app in Resources */,
+				F28AC9291196922F001780DB /* UniversalAccessCheckbox.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
