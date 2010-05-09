@@ -1,9 +1,9 @@
 //
 //  main.m
-//  UWWeather
+//  WindowMan
 //
-//  Created by Nolan Waite on 09-12-03.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Created by Nolan Waite on 10-05-09.
+//  Copyright 2010 Nolan Waite. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
