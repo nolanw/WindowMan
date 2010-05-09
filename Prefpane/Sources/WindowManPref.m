@@ -24,6 +24,8 @@
 @synthesize hotkeyTable;
 @synthesize helperStartOnLoginCheckBox;
 @synthesize helperIsRunningCheckBox;
+@synthesize menuStartOnLoginCheckBox;
+@synthesize menuIsRunningCheckBox;
 @synthesize accessibilityAPIEnabledTabView;
 @synthesize openUniversalAccessPrefpaneButton;
 
@@ -31,6 +33,7 @@ static NSString * WindowManAccessibilityEnabledTabViewItemID = @"AccessibilityEn
 static NSString * WindowManAccessibilityDisabledTabViewItemID = @"AccessibilityDisabled";
 static NSString * WindowManUniversalAccessPrefpanePath = @"/System/Library/PreferencePanes/UniversalAccessPref.prefPane";
 static NSString * WindowManHelperAppFilename = @"WindowManHelper.app";
+static NSString * WindowManMenuAppFilename = @"WindowManMenu.app";
 static NSString * WindowManPrefpaneHotkeyColumnID = @"hotkey";
 
 - (id)initWithBundle:(NSBundle *)bundle
@@ -74,8 +77,10 @@ static NSString * WindowManPrefpaneHotkeyColumnID = @"hotkey";
   {
     [self.accessibilityAPIEnabledTabView selectTabViewItemWithIdentifier:WindowManAccessibilityEnabledTabViewItemID];
   }
-  [self.helperStartOnLoginCheckBox setState:[NWLoginItems isBundleAtPathInSessionLoginItems:[self pathForBundledApp:WindowManHelperAppFilename]] ? NSOnState : NSOffState];
-  [self.helperIsRunningCheckBox setState:([[NSRunningApplication runningApplicationsWithBundleIdentifier:WindowManHelperBundleIdentifier] count] > 0) ? NSOnState : NSOffState];
+  [self.helperStartOnLoginCheckBox setState:([NWLoginItems isBundleAtPathInSessionLoginItems:[self pathForBundledApp:WindowManHelperAppFilename]] ? NSOnState : NSOffState)];
+  [self.helperIsRunningCheckBox setState:(([[NSRunningApplication runningApplicationsWithBundleIdentifier:WindowManHelperBundleIdentifier] count] > 0) ? NSOnState : NSOffState)];
+  [self.menuStartOnLoginCheckBox setState:([NWLoginItems isBundleAtPathInSessionLoginItems:[self pathForBundledApp:WindowManMenuAppFilename]] ? NSOnState : NSOffState)];
+  [self.menuIsRunningCheckBox setState:(([[NSRunningApplication runningApplicationsWithBundleIdentifier:WindowManMenuBundleIdentifier] count] > 0) ? NSOnState : NSOffState)];
 }
 
 - (NSString *)pathForBundledApp:(NSString *)bundledApp
@@ -86,7 +91,7 @@ static NSString * WindowManPrefpaneHotkeyColumnID = @"hotkey";
 - (IBAction)toggleStartWindowManHelperOnLogin:(id)sender
 {
   NSString *helperPath = [self pathForBundledApp:WindowManHelperAppFilename];
-  if ([sender state])
+  if ([sender state] == NSOnState)
   {
     [NWLoginItems addBundleAtPathToSessionLoginItems:helperPath];
   }
@@ -106,6 +111,31 @@ static NSString * WindowManPrefpaneHotkeyColumnID = @"hotkey";
   else
   {
     [[NSDistributedNotificationCenter defaultCenter] postNotificationName:WindowManTerminateHelperAppNotification object:nil];
+  }
+}
+
+- (IBAction)toggleStartWindowManMenuOnLogin:(id)sender
+{
+  NSString *menuPath = [self pathForBundledApp:WindowManMenuAppFilename];
+  if ([sender state] == NSOnState)
+  {
+    [NWLoginItems addBundleAtPathToSessionLoginItems:menuPath];
+  }
+  else
+  {
+    [NWLoginItems removeBundleAtPathFromSessionLoginItems:menuPath];
+  }
+}
+- (IBAction)toggleMenuAppRunning:(id)sender
+{
+  if ([sender state] == NSOnState)
+  {
+    NSURL *menuURL = [NSURL fileURLWithPath:[self pathForBundledApp:WindowManMenuAppFilename]];
+    [[NSWorkspace sharedWorkspace] launchApplicationAtURL:menuURL options:NSWorkspaceLaunchWithoutActivation configuration:[NSDictionary dictionary] error:nil];
+  }
+  else
+  {
+    [[NSDistributedNotificationCenter defaultCenter] postNotificationName:WindowManTerminateMenuAppNotification object:nil];
   }
 }
 
