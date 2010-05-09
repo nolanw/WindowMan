@@ -85,7 +85,7 @@
   }
   NSMutableParagraphStyle *paraStyle = [[[NSMutableParagraphStyle alloc] init] autorelease];
   [paraStyle setTabStops:[NSArray array]];
-  [paraStyle addTabStop:[[[NSTextTab alloc] initWithType:NSRightTabStopType location:300.0] autorelease]];
+  [paraStyle addTabStop:[[[NSTextTab alloc] initWithType:NSRightTabStopType location:320.0] autorelease]];
   NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
       paraStyle, NSParagraphStyleAttributeName
     , [NSFont menuFontOfSize:14], NSFontAttributeName
