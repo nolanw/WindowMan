@@ -102,7 +102,6 @@
 
 - (IBAction)performWindowAction:(NSMenuItem *)sender
 {
-  NSLog(@"%s hello; sender: %@", _cmd, sender);
   NSDictionary *userInfo = [NSDictionary dictionaryWithObject:[WindowManHotkeyPreferences() objectAtIndex:[sender tag]] forKey:WindowManUserInfoPreferenceKey];
   [[NSDistributedNotificationCenter defaultCenter] postNotificationName:WindowManPerformActionNotification object:nil userInfo:userInfo];
 }

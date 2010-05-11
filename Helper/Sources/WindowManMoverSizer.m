@@ -132,7 +132,7 @@
   error = AXUIElementSetAttributeValue(window, (CFStringRef)NSAccessibilityPositionAttribute, originValue);
   if (error != kAXErrorSuccess)
   {
-    NSLog(@"%s error setting position for window %@", _cmd, windowTitle);
+    NSLog(@"Could not set the origin of the window named %@. Perhaps the window is fighting an irresistable force.", windowTitle);
   }
   
   NiceCFRelease(windowTitle);
@@ -158,7 +158,7 @@
   error = AXUIElementSetAttributeValue(window, (CFStringRef)NSAccessibilitySizeAttribute, sizeValue);
   if (error != kAXErrorSuccess)
   {
-    NSLog(@"%s error setting size for window %@", _cmd, windowTitle);
+    NSLog(@"Could not set the size of the window named %@. Perhaps the window is sensitive.", windowTitle);
   }
   
   NiceCFRelease(windowTitle);
@@ -260,6 +260,18 @@ static void QuartersiesCGRect(CGRect inRect, CGRect *outRects)
   windowRect.origin.x = screenRect.origin.x + (screenRect.size.width / 2.0) - (windowRect.size.width / 2.0);
   windowRect.origin.y = screenRect.origin.y + (screenRect.size.height / 2.0) - (windowRect.size.height / 2.0);
   [self setOrigin:windowRect.origin forWindow:window];
+  NiceCFRelease(window);
+}
+
+
++ (void)maximizeVertically
+{
+  AXUIElementRef window = [self currentlyFocusedWindow];
+  CGRect windowRect = [self rectForWindow:window];
+  CGRect screenRect = [self visibleScreenFrameForWindow:window];
+  windowRect.origin.y = screenRect.origin.y;
+  windowRect.size.height = screenRect.size.height;
+  [self setRect:windowRect forWindow:window];
   NiceCFRelease(window);
 }
 

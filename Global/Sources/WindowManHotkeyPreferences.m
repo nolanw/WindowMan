@@ -19,6 +19,7 @@ NSString * WindowManHotkeyPreferenceBottomLeftQuarter = @"WindowManHotkeyPrefere
 NSString * WindowManHotkeyPreferenceCenterHorizontally = @"WindowManHotkeyPreferenceCenterHorizontally";
 NSString * WindowManHotkeyPreferenceCenterAbsolutely = @"WindowManHotkeyPreferenceCenterAbsolutely";
 
+NSString * WindowManHotkeyPreferenceMaximizeVertically = @"WindowManHotkeyPreferenceMaximizeVertically";
 NSString * WindowManHotkeyPreferenceMaximize = @"WindowManHotkeyPreferenceMaximize";
 
 NSArray * WindowManHotkeyPreferences()
@@ -33,11 +34,12 @@ NSArray * WindowManHotkeyPreferences()
     , WindowManHotkeyPreferenceTopLeftQuarter
     , WindowManHotkeyPreferenceTopRightQuarter
     , WindowManHotkeyPreferenceBottomRightQuarter
-    , WindowManHotkeyPreferenceBottomLeftQuarter 
+    , WindowManHotkeyPreferenceBottomLeftQuarter
     
     , WindowManHotkeyPreferenceCenterHorizontally
     , WindowManHotkeyPreferenceCenterAbsolutely
     
+    , WindowManHotkeyPreferenceMaximizeVertically
     , WindowManHotkeyPreferenceMaximize
     , nil];
   }

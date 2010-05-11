@@ -23,5 +23,8 @@ extern NSString * WindowManHotkeyPreferenceBottomLeftQuarter;
 extern NSString * WindowManHotkeyPreferenceCenterHorizontally;
 extern NSString * WindowManHotkeyPreferenceCenterAbsolutely;
 
+// Move to top of screen and resize to be as tall as screen.
+extern NSString * WindowManHotkeyPreferenceMaximizeVertically;
+
 // Move to top left and size to cover screen.
 extern NSString * WindowManHotkeyPreferenceMaximize;

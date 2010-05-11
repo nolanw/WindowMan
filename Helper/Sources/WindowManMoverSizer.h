@@ -31,6 +31,9 @@
 + (void)centerHorizontally;
 + (void)centerAbsolutely;
 
+// This just resizes the window.
++ (void)maximizeVertically;
+
 // This both moves and resizes the window.
 + (void)occupyEntireScreen;
 

@@ -139,6 +139,7 @@ static void EnsureActionsByPref()
       , @"occupyBottomLeftQuarter"
       , @"centerHorizontally"
       , @"centerAbsolutely"
+      , @"maximizeVertically"
       , @"occupyEntireScreen"
       , nil]
       forKeys: WindowManHotkeyPreferences()];
@@ -154,7 +155,6 @@ static void EnsureActionsByPref()
 
 - (void)performActionWithNotification:(NSNotification *)note
 {
-  NSLog(@"%s hello: %@", _cmd, note);
   EnsureActionsByPref();
   NSString *prefKey = [[note userInfo] objectForKey:WindowManUserInfoPreferenceKey];
   SEL action = sel_registerName([[actionsByPref objectForKey:prefKey] cStringUsingEncoding:NSASCIIStringEncoding]);
