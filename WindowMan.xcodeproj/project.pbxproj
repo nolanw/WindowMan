@@ -382,6 +382,7 @@
 				8D202CF00486D31800D8A456 /* Sources */,
 				8D202CF20486D31800D8A456 /* Frameworks */,
 				8D202CF50486D31800D8A456 /* Rez */,
+				F2A3E0FD119959F900E20BEA /* codesign */,
 			);
 			buildRules = (
 			);
@@ -402,6 +403,7 @@
 				F28AC81411964323001780DB /* Resources */,
 				F28AC81511964323001780DB /* Sources */,
 				F28AC81611964323001780DB /* Frameworks */,
+				F2A3E10311995B3700E20BEA /* codesign */,
 			);
 			buildRules = (
 			);
@@ -419,6 +421,7 @@
 				F28E53981193CEEF00880FFF /* Resources */,
 				F28E53991193CEEF00880FFF /* Sources */,
 				F28E539A1193CEEF00880FFF /* Frameworks */,
+				F2A3E10111995B2B00E20BEA /* codesign */,
 			);
 			buildRules = (
 			);
@@ -490,6 +493,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F2A3E0FD119959F900E20BEA /* codesign */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = codesign;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "codesign -s 'Nolan Waite' \"$TARGET_BUILD_DIR/$WRAPPER_NAME\"\n";
+		};
+		F2A3E10111995B2B00E20BEA /* codesign */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = codesign;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "codesign -s 'Nolan Waite' \"$TARGET_BUILD_DIR/$WRAPPER_NAME\"\n";
+		};
+		F2A3E10311995B3700E20BEA /* codesign */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = codesign;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "codesign -s 'Nolan Waite' \"$TARGET_BUILD_DIR/$WRAPPER_NAME\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D202CF00486D31800D8A456 /* Sources */ = {
