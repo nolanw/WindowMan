@@ -43,9 +43,23 @@
       <img alt="A screenshot of WindowMan's menu. It sits in your menu bar and provides a summary of the hotkey shortcuts you've set for each action, as well as a way to try out an action without setting a hotkey shortcut." src="WindowManMenu.png" width="396" height="282">
     </section>
     <section>
+      <h1>How do I uninstall WindowMan?</h1>
+      <p>
+        The same way you uninstall any preference pane. 
+        <ol>
+          <li> Open System Preferences.
+          <li> Right-click (or control-click) WindowMan in System Preferences.
+          <li> Select "Remove".
+        </ol>
+        The installer does absolutely nothing except to copy WindowMan.prefpane to the /Library/PreferencePanes/ directory.
+      </p>
+      <h1>Why an installer?</h1>
+      <p>
+        I hate them too. Installers always feel like they're dumping random files to unknown places, whether or not they actually do. Worse, there's no automatic uninstallation; you just hope the developer provides an uninstall script. Unfortunately, an installer package best solves the one big problem I had with WindowMan. When you download the WindowMan preference pane on its own (as in, not part of an installer package), the embedded helper applications are put into quarantine. (You know, the "You downloaded this application from the internet, are you sure you want to open it?" message.) The System Preferences application can't handle that, and beachballs for awhile. If you're lucky and you switch back and forth between other applications for a minute, you get a chance to allow the helper applications out of quarantine. It's a painful user experience, even more so than an installer. If you know of a better way (and I'm not blindly running xattr in the prefpane), drop me a line. For what it's worth, the Growl project reached the same conclusions, and I respect that project.
+      </p>
       <h1>Thanks</h1>
       <p>
-        <a href="http://code.google.com/p/shiftit/">Shift It</a> inspired me to make a free offering that does this with configurable keyboard shortcuts, and saved me a lot of time burrowing through various APIs. <a href="http://growl.info">Growl</a> suggested the design of the components (prefpane, menu, helper) of WindowMan. <a href="http://wafflesoftware.net/shortcut/">Shortcut Recorder</a> provided some fantastic signposts at the stumbling blocks of key codes and modifier flags.
+        <a href="http://code.google.com/p/shiftit/">Shift It</a> inspired me to make a free offering that does this with configurable keyboard shortcuts, and saved me a lot of time burrowing through various APIs. <a href="http://growl.info">Growl</a> suggested the design of the components (prefpane, menu, helper) of WindowMan. <a href="http://wafflesoftware.net/shortcut/">Shortcut Recorder</a> provided some fantastic signposts at the stumbling blocks of key codes and modifier flags. <a href="http://s.sudre.free.fr/Software/Packages.html">Packages</a> for greatly easing the making of installer packages.
       </p>
     </section>
   </div>
