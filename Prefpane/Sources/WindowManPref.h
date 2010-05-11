@@ -35,5 +35,6 @@
 - (IBAction)toggleMenuAppRunning:(id)sender;
 - (IBAction)openUniversalAccessPrefpane:(id)sender;
 - (IBAction)editSelectedRowHotkeyInTable:(id)sender;
+- (IBAction)openWindowManWebsite:(id)sender;
 
 @end

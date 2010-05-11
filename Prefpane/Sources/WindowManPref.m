@@ -38,6 +38,7 @@ static NSString * WindowManUniversalAccessPrefpanePath = @"/System/Library/Prefe
 static NSString * WindowManHelperAppFilename = @"WindowManHelper.app";
 static NSString * WindowManMenuAppFilename = @"WindowManMenu.app";
 static NSString * WindowManPrefpaneHotkeyColumnID = @"hotkey";
+static NSString * WindowManWebsite = @"http://nolanw.ca/windowman/";
 
 - (id)initWithBundle:(NSBundle *)bundle
 {
@@ -156,6 +157,11 @@ static NSString * WindowManPrefpaneHotkeyColumnID = @"hotkey";
     return;
   }
   [tableView editColumn:[tableView columnWithIdentifier:WindowManPrefpaneHotkeyColumnID] row:clickedRow withEvent:nil select:YES];
+}
+
+- (IBAction)openWindowManWebsite:(id)sender
+{
+  [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:WindowManWebsite]];
 }
 
 - (void)setHotkey:(NWHotkeyBox *)hotkey forPreferenceAtIndex:(NSUInteger)prefIndex
