@@ -209,10 +209,6 @@
   // NSRect y increases up; CGRect y increases down; all screens relative to first.
   CGFloat zeroScreenHeight = NSHeight([[[NSScreen screens] objectAtIndex:0] frame]);
   visibleFrame.origin.y = zeroScreenHeight - visibleFrame.origin.y - visibleFrame.size.height;
-  if ([windowScreen isEqual:[NSScreen mainScreen]])
-  {
-    visibleFrame.origin.y += [[NSStatusBar systemStatusBar] thickness];
-  }
   return visibleFrame;
 }
 
