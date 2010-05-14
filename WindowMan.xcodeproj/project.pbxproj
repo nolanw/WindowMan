@@ -507,7 +507,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "codesign -s 'Nolan Waite' \"$TARGET_BUILD_DIR/$WRAPPER_NAME\"\n";
+			shellScript = "codesign -f -s 'Nolan Waite' \"$TARGET_BUILD_DIR/$WRAPPER_NAME\"\n";
 		};
 		F2A3E10111995B2B00E20BEA /* codesign */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -521,7 +521,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "codesign -s 'Nolan Waite' \"$TARGET_BUILD_DIR/$WRAPPER_NAME\"\n";
+			shellScript = "codesign -f -s 'Nolan Waite' \"$TARGET_BUILD_DIR/$WRAPPER_NAME\"\n";
 		};
 		F2A3E10311995B3700E20BEA /* codesign */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -535,7 +535,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "codesign -s 'Nolan Waite' \"$TARGET_BUILD_DIR/$WRAPPER_NAME\"\n";
+			shellScript = "codesign -f -s 'Nolan Waite' \"$TARGET_BUILD_DIR/$WRAPPER_NAME\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
