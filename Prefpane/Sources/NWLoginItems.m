@@ -48,7 +48,9 @@
   {
     item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(snapshot, snapshotIndex);
     LSSharedFileListItemResolve(item, 0, &itemURL, NULL);
-    if ([(NSURL *)itemURL isEqual:bundleURL])
+    if (itemURL == NULL)
+      continue;
+    if ([bundleURL isEqual:(NSURL *)itemURL])
       ret = (LSSharedFileListItemRef)CFRetain(item);
     CFRelease(itemURL);
   }
