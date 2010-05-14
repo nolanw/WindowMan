@@ -44,11 +44,12 @@
   LSSharedFileListItemRef item;
   LSSharedFileListItemRef ret = NULL;
   CFURLRef itemURL;
+  OSErr error;
   while (snapshotIndex-- && ret == NULL)
   {
     item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(snapshot, snapshotIndex);
-    LSSharedFileListItemResolve(item, 0, &itemURL, NULL);
-    if (itemURL == NULL)
+    error = LSSharedFileListItemResolve(item, 0, &itemURL, NULL);
+    if (itemURL == NULL || error != noErr)
       continue;
     if ([bundleURL isEqual:(NSURL *)itemURL])
       ret = (LSSharedFileListItemRef)CFRetain(item);
