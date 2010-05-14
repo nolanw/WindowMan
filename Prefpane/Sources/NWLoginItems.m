@@ -27,14 +27,17 @@
 + (LSSharedFileListRef)_sessionLoginItems
 {
   LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
-  NSAssert(loginItems != NULL, @"Could not create session login items file list.");
   return loginItems;
 }
 
 + (LSSharedFileListItemRef)_sessionLoginItemForBundleAtPath:(NSString *)path
 {
-  NSURL *bundleURL = [NSURL fileURLWithPath:path];
   LSSharedFileListRef loginItems = [self _sessionLoginItems];
+  if (loginItems == NULL)
+  {
+    return NULL;
+  }
+  NSURL *bundleURL = [NSURL fileURLWithPath:path];
   UInt32 seed;
   CFArrayRef snapshot = LSSharedFileListCopySnapshot(loginItems, &seed);
   CFIndex snapshotIndex = CFArrayGetCount(snapshot);
@@ -70,6 +73,10 @@ void EnsureBundle(NSBundle **bundle)
 {
   NSURL *bundleURL = [NSURL fileURLWithPath:path];
   LSSharedFileListRef loginItems = [self _sessionLoginItems];
+  if (loginItems == NULL)
+  {
+    return;
+  }
   LSSharedFileListItemRef item = [self _sessionLoginItemForBundleAtPath:path];
   if (item == NULL)
     item = LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemLast, NULL, NULL, (CFURLRef)bundleURL, NULL, NULL);
@@ -86,6 +93,10 @@ void EnsureBundle(NSBundle **bundle)
 + (void)removeBundleAtPathFromSessionLoginItems:(NSString *)path
 {
   LSSharedFileListRef loginItems = [self _sessionLoginItems];
+  if (loginItems == NULL)
+  {
+    return;
+  }
   LSSharedFileListItemRef item = [self _sessionLoginItemForBundleAtPath:path];
   if (item != NULL)
   {
