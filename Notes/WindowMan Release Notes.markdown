@@ -1,6 +1,11 @@
 [WindowMan](http://nolanw.ca/WindowMan) Release Notes
 =======================
 
+Version 0.1.2
+-------------
+
+  - Eliminated spurious right border in preference pane's table view's column header.
+
 Version 0.1.1
 -------------
 
