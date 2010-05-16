@@ -11,7 +11,7 @@
 			<string key="NS.object.0">762</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="140"/>
+			<integer value="12"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -66,13 +66,13 @@
 															<object class="NSTableView" id="1024969684">
 																<reference key="NSNextResponder" ref="358480853"/>
 																<int key="NSvFlags">258</int>
-																<string key="NSFrameSize">{626, 190}</string>
+																<string key="NSFrameSize">{627, 190}</string>
 																<reference key="NSSuperview" ref="358480853"/>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSTableHeaderView" key="NSHeaderView" id="767434654">
 																	<reference key="NSNextResponder" ref="1031832147"/>
 																	<int key="NSvFlags">256</int>
-																	<string key="NSFrameSize">{626, 17}</string>
+																	<string key="NSFrameSize">{627, 17}</string>
 																	<reference key="NSSuperview" ref="1031832147"/>
 																	<reference key="NSTableView" ref="1024969684"/>
 																</object>
@@ -137,13 +137,11 @@
 																				<reference key="NSColor" ref="343880753"/>
 																			</object>
 																		</object>
-																		<int key="NSResizingMask">3</int>
-																		<bool key="NSIsResizeable">YES</bool>
 																		<reference key="NSTableView" ref="1024969684"/>
 																	</object>
 																	<object class="NSTableColumn" id="486346611">
 																		<string key="NSIdentifier">hotkey</string>
-																		<double key="NSWidth">166</double>
+																		<double key="NSWidth">167</double>
 																		<double key="NSMinWidth">40</double>
 																		<double key="NSMaxWidth">1000</double>
 																		<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -190,10 +188,10 @@
 																	</object>
 																</object>
 																<double key="NSRowHeight">17</double>
-																<int key="NSTvFlags">314572800</int>
+																<int key="NSTvFlags">316669952</int>
 																<reference key="NSDelegate"/>
 																<reference key="NSDataSource"/>
-																<int key="NSColumnAutoresizingStyle">5</int>
+																<int key="NSColumnAutoresizingStyle">0</int>
 																<int key="NSDraggingSourceMaskForLocal">15</int>
 																<int key="NSDraggingSourceMaskForNonLocal">0</int>
 																<bool key="NSAllowsTypeSelect">YES</bool>
@@ -214,13 +212,14 @@
 														<reference key="NSSuperview" ref="398037698"/>
 														<reference key="NSTarget" ref="398037698"/>
 														<string key="NSAction">_doScroller:</string>
-														<double key="NSPercent">0.91228067874908447</double>
+														<double key="NSPercent">0.92105263471603394</double>
 													</object>
 													<object class="NSScroller" id="93747276">
 														<reference key="NSNextResponder" ref="398037698"/>
 														<int key="NSvFlags">-2147483392</int>
-														<string key="NSFrame">{{1, 77}, {146, 15}}</string>
+														<string key="NSFrame">{{-100, -100}, {626, 15}}</string>
 														<reference key="NSSuperview" ref="398037698"/>
+														<bool key="NSEnabled">YES</bool>
 														<int key="NSsFlags">1</int>
 														<reference key="NSTarget" ref="398037698"/>
 														<string key="NSAction">_doScroller:</string>
@@ -244,7 +243,7 @@
 												<string key="NSFrame">{{20, 82}, {628, 208}}</string>
 												<reference key="NSSuperview" ref="1024143394"/>
 												<reference key="NSNextKeyView" ref="358480853"/>
-												<int key="NSsFlags">562</int>
+												<int key="NSsFlags">658</int>
 												<reference key="NSVScroller" ref="886929403"/>
 												<reference key="NSHScroller" ref="93747276"/>
 												<reference key="NSContentView" ref="358480853"/>
@@ -376,7 +375,7 @@ IGluY2x1ZGUgYXQgbGVhc3QgdHdvIG9mIGNvbnRyb2wsIG9wdGlvbiwgY29tbWFuZCwgc2hpZnQuA</s
 													<object class="NSFont" key="NSSupport">
 														<string key="NSName">LucidaGrande</string>
 														<double key="NSSize">12</double>
-														<int key="NSfFlags">4883</int>
+														<int key="NSfFlags">16</int>
 													</object>
 													<reference key="NSControlView" ref="546114477"/>
 													<int key="NSButtonFlags">-2038284033</int>
