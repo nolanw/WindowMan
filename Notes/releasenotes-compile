@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'kramdown'
+
+MERGE = (ARGV.size == 1 and ARGV[0] == '--merge')
+MERGEFILE = nil
+
+unless ARGV.empty? or MERGE
+  puts "Compiles *.markdown files in pwd into individual HTML with a simple template."
+  puts "Edit this script to change the template."
+  puts "Pass option --merge to append compiled *.markdown files into merged.html"
+  Process.exit
+end
+
+template = DATA.read
+if MERGE
+  MERGEFILE = File.open('merged.html', 'w')
+end
+
+Dir["*.markdown"].each do |filename|
+  title = filename.chomp(File.extname(filename))
+  out = MERGEFILE || File.open(title + '.html', 'w')
+  File.open(filename, 'r') do |infile|
+    html = Kramdown::Document.new(infile.read).to_html
+    if MERGE
+      collect ||= ''
+      collect += html
+    else
+      out.write(template % [title, html])
+      out.close
+    end
+  end
+  puts "Done #{title}"
+end
+
+if MERGE
+  out.write(template % ['Hello', collect])
+end
+
+__END__
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>%s</title>
+  <style type="text/css">
+  * {
+    font-family: Helvetica, sans-serif;
+  }
+  h1 a {
+    color: #000;
+  }
+  </style>
+</head>
+<body>
+  %s
+</body>
+</html>

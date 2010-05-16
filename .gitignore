@@ -14,3 +14,6 @@ build/*
 
 # Textmate crap
 *.tm_build_errors
+
+# Compiled release notes
+Notes/*.html
